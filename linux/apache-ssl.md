@@ -131,6 +131,34 @@ creo il file /etc/apache2/sites-available/revprx-www.mysite.local
 	 ProxyPass / http://sito-interno/ 
      </VirtualHost>
 
+##Esempi
+esempi: 
+www.esterno.it → www.interno.it
+
+    ProxyPassReverse / http://sito-esterno/
+    ProxyPass / http://sito-interno/ 
+
+www.esterno.it/ext → www.interno.it
+
+    <Location /ext>
+	ProxyPass http://sito-interno/ 
+    </Location>
+	ProxyPassReverse / http://sito-esterno/
+
+www.esterno.it → www.interno.it/int
+
+    ProxyPassReverse / http://sito-esterno/
+    ProxyPass / http://sito-interno/int
+    
+attenzione che i link nell'applicazione devono essere corretti.  
+
+altre opzioni 
+
+Metto a posto i web server che non supportano correttamente http1.1
+
+    SetEnv force-proxy-request-1.0 1
+    SetEnv proxy-nokeepalive 1
+
 ##per pubblicare OWA
 
 abilitare il mod_rewrite
