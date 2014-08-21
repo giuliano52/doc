@@ -1,0 +1,46 @@
+---
+title: SSH 
+author: Giuliano Dedda 
+date: 20/07/2014
+---
+
+per eseguire un commando: 
+
+    ssh host "cat /etc/passwd" 
+
+copia tutto l'albero
+
+    scp -r src dst
+
+se si vuole usare lsft con una porta diversa:
+
+    sftp -oPort=1234 user@host
+
+#Autenticazione con chiave pubblica
+
+sul client: 
+
+    ssh-keygen -t dsa (non iserire la passphrase se si vuole il login automatico)
+    scp -P <porta> ~/.ssh/id_dsa.pub utente@server:
+	
+sul server
+
+    cat id_dsa.pub >> ~/.ssh/authorized_keys
+
+#Configuarzioni /etc/ssh/sshd_config
+
+    Banner 		imposta il banner prima del login
+    X11Forwarding 	(yes|no) abilita l'export delle sessioni X11
+
+
+#SSHFS
+installare sshfs
+
+    $ sshfs USERNAME@HOSTNAME_OR_IP:/PATH LOCAL_MOUNT_POINT SSH_OPTIONS
+
+For example:
+
+    $ sshfs sessy@mycomputer:/home/sessy /mnt/sessy -C -p 9876
+
+
+

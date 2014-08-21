@@ -1,0 +1,115 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+    \usepackage{xltxtra,xunicode}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+\usepackage[top=1cm, bottom=1.5cm, left=1cm, right=1cm]{geometry}
+\ifxetex
+  \usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \usepackage[unicode=true]{hyperref}
+\fi
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={Giuliano Dedda},
+            pdftitle={Samba},
+            colorlinks=true,
+            citecolor=blue,
+            urlcolor=blue,
+            linkcolor=magenta,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\setcounter{secnumdepth}{0}
+
+\title{Samba}
+\author{Giuliano Dedda}
+\date{20/07/2014}
+
+\begin{document}
+\maketitle
+
+\section{Client}\label{client}
+
+Per accedere alle share bisogna impostare il dominio. (Può essere
+impostato anche in /etc/samba/smb.conf)
+
+\begin{verbatim}
+smbclient //host/share -U guest
+smbclient -L //host -U guest
+\end{verbatim}
+
+se si vuole montare bisogna installare il pacchetto smbfs
+
+\begin{verbatim}
+smbmount //host/share /mnt/point/ -o username=guest
+\end{verbatim}
+
+In fsab
+
+\begin{verbatim}
+//mio_server_win2k/Cartella_condivisa
+/directory_in_cui_monto_la_condivisione smbfs uid=<num_uid>,fmask=<fmask>,dmask=<dmask>,username=USER,password=PASS,workgroup=WORK 0 0
+\end{verbatim}
+
+\section{Server}\label{server}
+
+\begin{verbatim}
+ apt-get install samba 
+ pacman -S samba
+\end{verbatim}
+
+vi /etc/samba/smb.conf
+
+Per fare la condivisione delle home aggiungere alla fine di
+/etc/samba/smb.conf: {[}homes{]} browseable = yes read only = no
+
+\begin{verbatim}
+sudo  smbpasswd -a username
+\end{verbatim}
+
+dalla versione 4 usare:
+
+\begin{verbatim}
+pdbedit -a -u <user>
+
+
+systemctl enable smbd.service
+systemctl enable nmbd.service
+\end{verbatim}
+
+accedere con
+
+\begin{verbatim}
+\\server-samba\username
+\end{verbatim}
+
+\section{Winbind}\label{winbind}
+
+\begin{verbatim}
+ntlm_auth –username=test01  | per verificare le credenziali dell'utente
+wbinfo -n test01            | per trovare il sid di un utente
+\end{verbatim}
+
+\end{document}

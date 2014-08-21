@@ -1,0 +1,267 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+    \usepackage{xltxtra,xunicode}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+\usepackage[top=1cm, bottom=1.5cm, left=1cm, right=1cm]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+\newcommand{\RegionMarkerTok}[1]{{#1}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+\newcommand{\NormalTok}[1]{{#1}}
+\usepackage{longtable,booktabs}
+\ifxetex
+  \usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \usepackage[unicode=true]{hyperref}
+\fi
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={Giuliano Dedda},
+            pdftitle={Python},
+            colorlinks=true,
+            citecolor=blue,
+            urlcolor=blue,
+            linkcolor=magenta,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\setcounter{secnumdepth}{0}
+
+\title{Python}
+\author{Giuliano Dedda}
+\date{14/07/2014}
+
+\begin{document}
+\maketitle
+
+\section{Files}\label{files}
+
+\subsection{Leggere e scrivere su
+files}\label{leggere-e-scrivere-su-files}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{output = }\DataTypeTok{open}\NormalTok{(}\StringTok{'pippo.txt'}\NormalTok{,}\StringTok{'w'}\NormalTok{)  apertura di un }\DataTypeTok{file} \NormalTok{in scrittura}
+\DataTypeTok{input} \NormalTok{= }\DataTypeTok{open}\NormalTok{(}\StringTok{'dati'}\NormalTok{,}\StringTok{'r'}\NormalTok{)    apertura di un }\DataTypeTok{file} \NormalTok{in lettura}
+\NormalTok{s = }\DataTypeTok{input}\NormalTok{.read()    lettura dell}\StringTok{'intero contenuto del file}
+\StringTok{s = input.read(N)   lettura di N bytes}
+\StringTok{s = input.readline()    lettura di una riga (per files di testo)}
+\StringTok{s = input.readlines()   restuisce l'}\NormalTok{intero }\DataTypeTok{file} \NormalTok{come lista di righe (per files di testo)}
+\NormalTok{output.wre(s)   scrivo un intero }\DataTypeTok{file}
+\NormalTok{output.wrelines(L)  scrive la lista L in righe nel }\DataTypeTok{file}
+\NormalTok{output.close(L) chiusura }\KeywordTok{del} \DataTypeTok{file}
+\end{Highlighting}
+\end{Shaded}
+
+è meglio usare readlines rispetto a readline perché è più veloce.
+
+\subsection{Parsing di un file}\label{parsing-di-un-file}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CharTok{import} \NormalTok{sys}
+
+\NormalTok{f = }\DataTypeTok{open}\NormalTok{(sys.argv[}\DecValTok{1}\NormalTok{], }\StringTok{'r'}\NormalTok{)}
+
+\KeywordTok{for} \NormalTok{line in f.readlines():}
+    \DataTypeTok{print} \NormalTok{line}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{File in una directory}\label{file-in-una-directory}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dirname = }\StringTok{'./'}
+\KeywordTok{for} \NormalTok{dirpath, dirnames,files in os.walk(dirname):}
+    \KeywordTok{for} \NormalTok{filename in files:}
+        \NormalTok{file_full_path = os.path.join(dirpath, filename)}
+        \DataTypeTok{print}\NormalTok{(file_full_path)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Movimentazione file}\label{movimentazione-file}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(root,ext) = os.path.splitext(filename) }\CommentTok{# divide il nomefile in basename e estensione}
+
+\NormalTok{shutil.copyfile(src,dst) }\CommentTok{# copia file}
+\NormalTok{shutil.move(src,dst) }\CommentTok{# sposta file}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Script che mostra gli argomenti e esegue un
+comando}\label{script-che-mostra-gli-argomenti-e-esegue-un-comando}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CharTok{import} \NormalTok{sys}
+\CharTok{import} \NormalTok{os}
+
+\DataTypeTok{print} \StringTok{'Begining... now...'}
+
+\KeywordTok{for} \NormalTok{x in sys.argv:}
+    \DataTypeTok{print} \NormalTok{x}
+
+\NormalTok{os.system(}\StringTok{"echo ciao"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Array, liste, dizionari}\label{array-liste-dizionari}
+
+Una Lista (cioè un array) può essere definita così:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{xx = array([}\DecValTok{2}\NormalTok{, }\DecValTok{4}\NormalTok{, -}\DecValTok{11}\NormalTok{])}
+\NormalTok{yy = zeros(}\DecValTok{3}\NormalTok{, Int)        }\CommentTok{# Create empty array ready to receive result}
+\KeywordTok{for} \NormalTok{i in }\DataTypeTok{range}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{3}\NormalTok{):}
+     \NormalTok{yy[i] = xx[i] * }\DecValTok{2}
+\DataTypeTok{print} \NormalTok{yy}
+\NormalTok{[  }\DecValTok{4}   \DecValTok{8} \NormalTok{-}\DecValTok{22}\NormalTok{]}
+
+\NormalTok{li = [}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"mpilgrim"}\NormalTok{, }\StringTok{"z"}\NormalTok{, }\StringTok{"example"}\NormalTok{]}
+
+
+\NormalTok{Le }\DataTypeTok{tuple} \NormalTok{sono come le liste ma non hanno metodi e sono pià veloci}
+    \NormalTok{t = (}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"mpilgrim"}\NormalTok{, }\StringTok{"z"}\NormalTok{, }\StringTok{"example"}\NormalTok{)}
+
+
+\NormalTok{Un dizionario invece ha una relazione uno a uno con le chiavi:}
+    \NormalTok{d = \{}\StringTok{"server"}\NormalTok{:}\StringTok{"mpilgrim"}\NormalTok{, }\StringTok{"database"}\NormalTok{:}\StringTok{"master"}\NormalTok{\} }
+    \DataTypeTok{print} \NormalTok{d[}\StringTok{'server'}\NormalTok{]}
+
+\NormalTok{params = \{}\StringTok{"server"}\NormalTok{:}\StringTok{"mpilgrim"}\NormalTok{, }\StringTok{"database"}\NormalTok{:}\StringTok{"master"}\NormalTok{, }\StringTok{"uid"}\NormalTok{:}\StringTok{"sa"}\NormalTok{, }\StringTok{"pwd"}\NormalTok{:}\StringTok{"secret"}\NormalTok{\}}
+
+\NormalTok{>>> params.keys()   }
+\NormalTok{[}\StringTok{'server'}\NormalTok{, }\StringTok{'uid'}\NormalTok{, }\StringTok{'database'}\NormalTok{, }\StringTok{'pwd'}\NormalTok{]}
+
+\NormalTok{>>> params.values() }
+\NormalTok{[}\StringTok{'mpilgrim'}\NormalTok{, }\StringTok{'sa'}\NormalTok{, }\StringTok{'master'}\NormalTok{, }\StringTok{'secret'}\NormalTok{]}
+
+\NormalTok{>>> params.items()  }
+\NormalTok{[(}\StringTok{'server'}\NormalTok{, }\StringTok{'mpilgrim'}\NormalTok{), (}\StringTok{'uid'}\NormalTok{, }\StringTok{'sa'}\NormalTok{), (}\StringTok{'database'}\NormalTok{, }\StringTok{'master'}\NormalTok{), (}\StringTok{'pwd'}\NormalTok{, }\StringTok{'secret'}\NormalTok{)]}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Stringhe}\label{stringhe}
+
+Per concatenare stringhe sui usa il `+'
+
+\begin{longtable}[l]{@{}ll@{}}
+\toprule\addlinespace
+Comando & Effetto
+\\\addlinespace
+\midrule\endhead
+print ``Users connected: \%d'' \% (userCount, ) & Inserire un intero in
+una stringa
+\\\addlinespace
+stringa = format(int(data\_video{[}1{]}), `02d') & per formattare gli
+interi con gli zero davanti (leading zero)
+\\\addlinespace
+testo = testo.replace(`S', `6') & sostituzione di caratteri all'interno
+di una stringa
+\\\addlinespace
+\bottomrule
+\end{longtable}
+
+\section{Espressioni regolari}\label{espressioni-regolari}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CharTok{import} \NormalTok{sys}
+\CharTok{import} \NormalTok{re}
+
+\NormalTok{NomeFile = sys.argv[}\DecValTok{1}\NormalTok{]}
+
+\NormalTok{f = }\DataTypeTok{open}\NormalTok{(NomeFile, }\StringTok{'r'}\NormalTok{)}
+\KeywordTok{for} \NormalTok{line in f.readlines():}
+    \KeywordTok{if} \NormalTok{re.search(}\StringTok{'espessione'}\NormalTok{, line,re.I):}
+        \DataTypeTok{print} \NormalTok{line}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Esempi di espressioni}\label{esempi-di-espressioni}
+
+\begin{longtable}[l]{@{}ll@{}}
+\toprule\addlinespace
+Comando & Effetto
+\\\addlinespace
+\midrule\endhead
+parola & Cerca la parola all'interno della stringa
+\\\addlinespace
+\^{}parola & Cerca la parola all'inizio della stringa
+\\\addlinespace
+parola\$ & Cerca la parola alla fine della stringa
+\\\addlinespace
+cas{[}ae{]} & Cerca la parola seguita dalle lettere nelle parentesi
+quadre {[}{]} es trova sia `casa' che `case'
+\\\addlinespace
+\bottomrule
+\end{longtable}
+
+\section{Import}\label{import}
+
+Per importare da librerie fatte da me
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{sys.path.append(}\StringTok{"~/bin/"}\NormalTok{)}
+\CharTok{import} \NormalTok{dvd_extract_vob_chapter}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Sqlite}\label{sqlite}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{conn = sqlite3.}\OtherTok{connect}\NormalTok{(}\StringTok{'photos.db'}\NormalTok{)}
+\NormalTok{c = conn.cursor()}
+\NormalTok{LineSQL = }\StringTok{"SELECT base_uri,filename FROM photos, photo_tags WHERE photos.id=photo_id AND tag_id=1;"}
+
+\NormalTok{c.execute(LineSQL)}
+\KeywordTok{for} \NormalTok{row in c:}
+    \DataTypeTok{print} \NormalTok{row}
+\end{Highlighting}
+\end{Shaded}
+
+\end{document}

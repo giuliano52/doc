@@ -1,0 +1,264 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+    \usepackage{xltxtra,xunicode}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+\usepackage[top=1cm, bottom=1.5cm, left=1cm, right=1cm]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+\newcommand{\RegionMarkerTok}[1]{{#1}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+\newcommand{\NormalTok}[1]{{#1}}
+\usepackage{longtable,booktabs}
+\ifxetex
+  \usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \usepackage[unicode=true]{hyperref}
+\fi
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={Giuliano Dedda},
+            pdftitle={Arch Linux},
+            colorlinks=true,
+            citecolor=blue,
+            urlcolor=blue,
+            linkcolor=magenta,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\setcounter{secnumdepth}{0}
+
+\title{Arch Linux}
+\author{Giuliano Dedda}
+\date{10/07/2014}
+
+\begin{document}
+\maketitle
+
+\section{Installazione}\label{installazione}
+
+-- c'è anche https://wiki.archlinux.org/index.php/Installation\_Template
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{loadkeys} \NormalTok{it}
+\KeywordTok{cfdisk}    \NormalTok{(Partizionamento dischi)}
+\KeywordTok{mkfs.ext4} \NormalTok{/dev/sda1}
+\KeywordTok{mkswap} \NormalTok{/dev/sda2}
+
+\KeywordTok{cp} \NormalTok{/etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.orig}
+\KeywordTok{vi} \NormalTok{/etc/pacman.d/mirrorlist}
+
+\CommentTok{#<PROXY>}
+\KeywordTok{export} \OtherTok{http_proxy=}\NormalTok{http://user:password@}\OtherTok{proxy}\NormalTok{:8080}
+\KeywordTok{export} \OtherTok{https_proxy=}\NormalTok{http://user:password@}\OtherTok{proxy}\NormalTok{:8080}
+\KeywordTok{export} \OtherTok{ftp_proxy=}\NormalTok{http://user:password@}\OtherTok{proxy}\NormalTok{:8080}
+\CommentTok{#</PROXY>}
+
+\KeywordTok{mount} \NormalTok{/dev/sda1 /mnt}
+\KeywordTok{pacstrap} \NormalTok{/mnt base }
+
+
+\KeywordTok{genfstab} \NormalTok{-p -U /mnt }\KeywordTok{>>} \NormalTok{/mnt/etc/fstab }
+        \CommentTok{# -U usa gli UUID}
+
+\KeywordTok{echo} \StringTok{"/dev/sda2 swap    swap    defaults    0   0"} \KeywordTok{>>} \NormalTok{/mnt/etc/fstab}
+
+\CommentTok{# SCEGLIERE IL BOOTLOADER GRUB (meglio) O SYSLINUX}
+\CommentTok{#<GRUB>}
+\KeywordTok{arch-chroot} \NormalTok{/mnt pacman -S grub-bios}
+\CommentTok{#</GRUB>}
+\CommentTok{#<SYSLINUX>}
+\KeywordTok{arch-chroot} \NormalTok{/mnt pacman -S syslinux}
+\CommentTok{#</SYSLINUX>}
+
+\KeywordTok{arch-chroot} \NormalTok{/mnt}
+
+\CommentTok{# imposto l’hostname}
+\KeywordTok{echo} \StringTok{"Hostname"} \KeywordTok{>} \NormalTok{/etc/hostname}
+
+\KeywordTok{ln} \NormalTok{-s /usr/share/zoneinfo/Europe/Rome /etc/localtime}
+
+\KeywordTok{echo} \StringTok{"LANG=it_IT.UTF-8"} \KeywordTok{>} \NormalTok{/etc/locale.conf  }
+
+\KeywordTok{echo} \StringTok{"KEYMAP=it"} \KeywordTok{>} \NormalTok{/etc/vconsole.conf}
+
+\KeywordTok{nano} \NormalTok{/etc/locale.gen}
+    \KeywordTok{it_IT.UTF-8} \NormalTok{UTF-8  }
+    \KeywordTok{it_IT} \NormalTok{ISO-8859-1  }
+    \KeywordTok{it_IT@euro} \NormalTok{ISO-8859-15}
+\KeywordTok{locale-gen}
+
+\KeywordTok{mkinitcpio} \NormalTok{-p linux}
+
+\CommentTok{#<GRUB>}
+\KeywordTok{modprobe} \NormalTok{dm-mod}
+\KeywordTok{grub-install} \NormalTok{--target=i386-pc --boot-directory=/boot --recheck /dev/sda}
+\KeywordTok{grub-mkconfig} \NormalTok{-o /boot/grub/grub.cfg}
+\CommentTok{#</GRUB>}
+\CommentTok{#<SYSLINUX>}
+\KeywordTok{syslinux-install_update} \NormalTok{-i -a -m}
+\KeywordTok{nano} \NormalTok{/boot/syslinux/syslinux.cfg}
+    \KeywordTok{mettendo} \NormalTok{la giusta partizione di /}
+\KeywordTok{<}\NormalTok{/}\KeywordTok{SYSLINUX>}
+\KeywordTok{passwd}
+\KeywordTok{exit}
+\KeywordTok{reboot}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Post configuration}\label{post-configuration}
+
+\begin{verbatim}
+#<proxy>
+nano /etc/enviroment
+    http_proxy=http://user:password@proxy:8080
+    https_proxy=http://user:paissword@proxy:8080
+    ftp_proxy=http://user:password@proxy:8080
+#</proxy>
+
+#<network>
+Vedi sezione NETWORK
+#</network>
+
+
+pacman -S openssh
+systemctl enable sshd.service
+
+per SSD
+in /etcfstab aggiungere noatime,discard
+
+
+[per grub2 su ubuntu ]
+    sudo mount /dev/sdx /mnt/tmp
+    sudo update-grub2
+impostare i mirror
+\end{verbatim}
+
+\section{Pacchetti Aggiuntivi}\label{pacchetti-aggiuntivi}
+
+\begin{verbatim}
+pacman -S cinnamon lxdm xf86-video-ati gnome-terminal
+pacman -S sudo firefox vlc libreoffice-writer libreoffice-calc evince ntfs-3g
+\end{verbatim}
+
+\subsection{Virtualbox}\label{virtualbox}
+
+\begin{verbatim}
+pacman -S virtualbox visrtualbox-host-modules
+vi /etc/modules-load.d/virtualbox.conf
+    vboxdrv 
+    vboxnetadp 
+    vboxnetflt 
+\end{verbatim}
+
+\subsection{Truecrypt}\label{truecrypt}
+
+\begin{verbatim}
+/etc/modules-load.d/truecrypt.conf 
+    loop
+\end{verbatim}
+
+\subsection{Audio}\label{audio}
+
+non viene salvato il livello del volume pacman -s alsa-util
+
+\subsection{Yaourt}\label{yaourt}
+
+\begin{verbatim}
+vi /etc/pacman.conf 
+Per x86-64 
+[archlinuxfr] 
+Server = http://repo.archlinux.fr/x86_64 
+
+pacman -Sy yaourt
+\end{verbatim}
+
+\section{Network}\label{network}
+
+Bisogna usare netctl per sapere le schede di rete: dmesg \textbar{} grep
+eth oppure ls /sys/class/net
+
+\begin{verbatim}
+cp /etc/netctl/examples/profilo /etc/netctl/
+nano profilo
+per vedere se funziona: 
+netctl start <profile>
+
+poi attivarlo definitivamente al boot: 
+netctl enable <profile>
+\end{verbatim}
+
+\subsection{Abilitare X via ssh}\label{abilitare-x-via-ssh}
+
+Serve aggiungere I seguenti pacchetti: pacman -S xorg-xauth pacman -S
+xorg-fonts-type1
+
+\section{Mirror}\label{mirror}
+
+cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup rankmirrors
+-n 6 /etc/pacman.d/mirrorlist.backup \textgreater{}
+/etc/pacman.d/mirrorlist
+
+\section{Gestione pacchetti}\label{gestione-pacchetti}
+
+\subsection{Pacman}\label{pacman}
+
+\begin{longtable}[l]{@{}lll@{}}
+\toprule\addlinespace
+Opzione & Descrizione & Esempio
+\\\addlinespace
+\midrule\endhead
+-S & Installa un pacchetto
+\\\addlinespace
+-Syu & aggiorna database e pacchetti
+\\\addlinespace
+-Q & queri sui pacchetti installati
+\\\addlinespace
+\bottomrule
+\end{longtable}
+
+Visualizza la lista dei pacchetti ordinati per dimensione
+
+\begin{verbatim}
+pacsysclean 
+\end{verbatim}
+
+\end{document}

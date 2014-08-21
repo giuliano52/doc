@@ -1,0 +1,93 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+    \usepackage{xltxtra,xunicode}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+\usepackage[top=1cm, bottom=1.5cm, left=1cm, right=1cm]{geometry}
+\ifxetex
+  \usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \usepackage[unicode=true]{hyperref}
+\fi
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={Giuliano Dedda},
+            pdftitle={Apache e SSL},
+            colorlinks=true,
+            citecolor=blue,
+            urlcolor=blue,
+            linkcolor=magenta,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\setcounter{secnumdepth}{0}
+
+\title{Apache e SSL}
+\author{Giuliano Dedda}
+\date{18/07/2014}
+
+\begin{document}
+\maketitle
+
+\section{VirtualHost}\label{virtualhost}
+
+Prima di fare alti virtualhost è meglio spostare quello di default in
+/var/www/default
+
+\begin{verbatim}
+mkdir /var/www/nuovosito
+mkdir /var/www/nuovosito/httpdocs
+echo "funziona" > /var/www/nuovosito/httpdocs/index.html
+\end{verbatim}
+
+vi /etc/apache2/sites-available/001-www.nuovosito.it.conf
+
+\begin{verbatim}
+<VirtualHost *:80>
+ServerName www.nuovosito.it
+DocumentRoot /var/www/nuovosito/httpdocs
+</VirtualHost>
+\end{verbatim}
+
+\section{Userdir}\label{userdir}
+
+\begin{verbatim}
+a2enmod userdir
+\end{verbatim}
+
+abilita la directory nelle home public\_html
+
+per abilitare anche il php andare in /etc/apache2/mods-enabled/php5.conf
+
+\begin{verbatim}
+<IfModule mod_userdir.c>
+    <Directory /home/*/public_html>
+       php_admin_value engine Off
+    </Directory>
+</IfModule>
+\end{verbatim}
+
+e commentarle con un \#
+
+\end{document}

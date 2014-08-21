@@ -1,0 +1,93 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+    \usepackage{xltxtra,xunicode}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+\usepackage[top=1cm, bottom=1.5cm, left=1cm, right=1cm]{geometry}
+\ifxetex
+  \usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \usepackage[unicode=true]{hyperref}
+\fi
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={Giuliano Dedda},
+            pdftitle={Backup e Restore},
+            colorlinks=true,
+            citecolor=blue,
+            urlcolor=blue,
+            linkcolor=magenta,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\setcounter{secnumdepth}{0}
+
+\title{Backup e Restore}
+\author{Giuliano Dedda}
+\date{10/07/2014}
+
+\begin{document}
+\maketitle
+
+\section{Duplicity}\label{duplicity}
+
+\begin{verbatim}
+  yaourt -S duplicity
+\end{verbatim}
+
+bisogna avere già~ una chiave GPG (vedi doc opportuno)
+
+\subsection{backup}\label{backup}
+
+\begin{verbatim}
+  duplicity sorgente destinazione
+  duplicity /home/me scp://uid@other.host//usr/backup
+\end{verbatim}
+
+\subsection{Restore}\label{restore}
+
+\begin{verbatim}
+  duplicity scp://uid@other.host//usr/backup /home/me
+\end{verbatim}
+
+\section{S3QL}\label{s3ql}
+
+tool per utilizzare un fileserver remoto (anche locale con encryption
+deduplicazione e compressione).
+
+\emph{20140612 Non sono riuscito a farlo funzionare. probabilmente
+esistono problemi tra python2 e 3}
+
+\begin{verbatim}
+  yaourt -S s3ql
+\end{verbatim}
+
+creazione del backend
+
+\begin{verbatim}
+  mkdir s3ql-loc
+  mkfs.s3ql local://s3ql-loc
+\end{verbatim}
+
+\end{document}

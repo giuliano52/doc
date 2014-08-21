@@ -1,0 +1,105 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+    \usepackage{xltxtra,xunicode}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+\usepackage[top=1cm, bottom=1.5cm, left=1cm, right=1cm]{geometry}
+\ifxetex
+  \usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \usepackage[unicode=true]{hyperref}
+\fi
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={Giuliano Dedda},
+            pdftitle={SSH},
+            colorlinks=true,
+            citecolor=blue,
+            urlcolor=blue,
+            linkcolor=magenta,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\setcounter{secnumdepth}{0}
+
+\title{SSH}
+\author{Giuliano Dedda}
+\date{20/07/2014}
+
+\begin{document}
+\maketitle
+
+per eseguire un commando:
+
+\begin{verbatim}
+ssh host "cat /etc/passwd" 
+\end{verbatim}
+
+copia tutto l'albero
+
+\begin{verbatim}
+scp -r src dst
+\end{verbatim}
+
+se si vuole usare lsft con una porta diversa:
+
+\begin{verbatim}
+sftp -oPort=1234 user@host
+\end{verbatim}
+
+\section{Autenticazione con chiave
+pubblica}\label{autenticazione-con-chiave-pubblica}
+
+sul client:
+
+\begin{verbatim}
+ssh-keygen -t dsa (non iserire la passphrase se si vuole il login automatico)
+scp -P <porta> ~/.ssh/id_dsa.pub utente@server:
+\end{verbatim}
+
+sul server
+
+\begin{verbatim}
+cat id_dsa.pub >> ~/.ssh/authorized_keys
+\end{verbatim}
+
+\section{Configuarzioni sshd}\label{configuarzioni-sshd}
+
+Banner imposta il banner prima del login
+
+\section{SSHFS}\label{sshfs}
+
+installare sshfs
+
+\begin{verbatim}
+$ sshfs USERNAME@HOSTNAME_OR_IP:/PATH LOCAL_MOUNT_POINT SSH_OPTIONS
+\end{verbatim}
+
+For example:
+
+\begin{verbatim}
+$ sshfs sessy@mycomputer:/home/sessy /mnt/sessy -C -p 9876
+\end{verbatim}
+
+\end{document}

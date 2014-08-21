@@ -1,0 +1,268 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+    \usepackage{xltxtra,xunicode}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+\usepackage[top=1cm, bottom=1.5cm, left=1cm, right=1cm]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+\newcommand{\RegionMarkerTok}[1]{{#1}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+\newcommand{\NormalTok}[1]{{#1}}
+\ifxetex
+  \usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \usepackage[unicode=true]{hyperref}
+\fi
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={},
+            pdftitle={},
+            colorlinks=true,
+            citecolor=blue,
+            urlcolor=blue,
+            linkcolor=magenta,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\setcounter{secnumdepth}{0}
+
+
+\begin{document}
+
+\section{JOOMLA}\label{joomla}
+
+\section{Installazione}\label{installazione}
+
+conviene dare i permessi alla cartella all'utente con cui gira il web
+server es supponendo che joomla sia installata in
+/home/test/public\_html/j02 e apache giri con utente: http
+
+\begin{verbatim}
+sudo chgrp -R http *
+chmod g+w -R j02/
+\end{verbatim}
+
+\section{Creazioni componenti}\label{creazioni-componenti}
+
+\subsection{visualizzazione nel menu}\label{visualizzazione-nel-menu}
+
+per visualizzare il componente tra i menù disponibili creare il file
+default.xml all'interno delle view da mostrare es:
+site/views/helloworld/tmpl/default.xml\\NB: per
+COM\_HELLOWORLD\_HELLOWORLD\_VIEW\_DEFAULT\_DESC utilizzare il file di
+language dentro admin
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{<?xml} \NormalTok{version="1.0" encoding="utf-8"}\KeywordTok{?>}
+\KeywordTok{<metadata>}
+        \KeywordTok{<layout}\OtherTok{ title=}\StringTok{"COM_HELLOWORLD_HELLOWORLD_VIEW_DEFAULT_TITLE"}\KeywordTok{>}
+                \KeywordTok{<message>}
+                        \BaseNTok{<![CDATA[}\NormalTok{COM_HELLOWORLD_HELLOWORLD_VIEW_DEFAULT_DESC}\BaseNTok{]]>}
+                \KeywordTok{</message>}
+        \KeywordTok{</layout>}
+\KeywordTok{</metadata>}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Variabili utili}\label{variabili-utili}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{JPATH_ADMINISTRATOR}     \NormalTok{->  /home/test01/public_html/j01/administrator}
+\KeywordTok{JPATH_ROOT}              \NormalTok{->  /home/test01/public_html/j01}
+\KeywordTok{JPATH_COMPONENT}         \NormalTok{->  /home/test01/public_html/j01/components/com_pqz}
+\KeywordTok{JPATH_LIBRARIES}         \NormalTok{->  /home/test01/public_html/j01/libraries}
+\KeywordTok{JURI}\NormalTok{::root}\OtherTok{()}            \NormalTok{->  http:}\CommentTok{//192.168.1.101/~test01/j01/}
+\NormalTok{Juri::base}\OtherTok{()}            \NormalTok{->  http:}\CommentTok{//192.168.20.27/~test01/j01/ }
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{Dati Utente}\label{dati-utente}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{$user} \NormalTok{= JFactory::getUser}\OtherTok{();}
+ 
+\KeywordTok{if} \OtherTok{(}\NormalTok{!}\KeywordTok{$user}\NormalTok{->guest}\OtherTok{)} \NormalTok{\{}
+  \FunctionTok{echo} \StringTok{'You are logged in as:<br />'}\OtherTok{;}
+  \FunctionTok{echo} \StringTok{'User name: '} \NormalTok{. }\KeywordTok{$user}\NormalTok{->username . }\StringTok{'<br />'}\OtherTok{;}
+  \FunctionTok{echo} \StringTok{'Real name: '} \NormalTok{. }\KeywordTok{$user}\NormalTok{->name . }\StringTok{'<br />'}\OtherTok{;}
+  \FunctionTok{echo} \StringTok{'User ID  : '} \NormalTok{. }\KeywordTok{$user}\NormalTok{->id . }\StringTok{'<br />'}\OtherTok{;}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{Accesso al db}\label{accesso-al-db}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{// Get a db connection.}
+\KeywordTok{$db} \NormalTok{= JFactory::getDbo}\OtherTok{();}
+ 
+\CommentTok{// Create a new query object.}
+\KeywordTok{$query} \NormalTok{= }\KeywordTok{$db}\NormalTok{->getQuery}\OtherTok{(}\KeywordTok{true}\OtherTok{);}
+ 
+\CommentTok{// Select all records from the user profile table where key begins with "custom.".}
+\CommentTok{// Order it by the ordering field.}
+\KeywordTok{$query}\NormalTok{->select}\OtherTok{(}\KeywordTok{$db}\NormalTok{->quoteName}\OtherTok{(}\FunctionTok{array}\OtherTok{(}\StringTok{'user_id'}\OtherTok{,} \StringTok{'profile_key'}\OtherTok{,} \StringTok{'profile_value'}\OtherTok{,} \StringTok{'ordering'}\OtherTok{)));}
+\KeywordTok{$query}\NormalTok{->from}\OtherTok{(}\KeywordTok{$db}\NormalTok{->quoteName}\OtherTok{(}\StringTok{'#__user_profiles'}\OtherTok{));}
+\KeywordTok{$query}\NormalTok{->where}\OtherTok{(}\KeywordTok{$db}\NormalTok{->quoteName}\OtherTok{(}\StringTok{'profile_key'}\OtherTok{)} \NormalTok{. }\StringTok{' LIKE '}\NormalTok{. }\KeywordTok{$db}\NormalTok{->quote}\OtherTok{(}\StringTok{'}\KeywordTok{\textbackslash{}'}\StringTok{custom.%}\KeywordTok{\textbackslash{}'}\StringTok{'}\OtherTok{));}
+\KeywordTok{$query}\NormalTok{->order}\OtherTok{(}\StringTok{'ordering ASC'}\OtherTok{);}
+ 
+\CommentTok{// Reset the query using our newly populated query object.}
+\KeywordTok{$db}\NormalTok{->setQuery}\OtherTok{(}\KeywordTok{$query}\OtherTok{);}
+ 
+\CommentTok{// Load the results as a list of stdClass objects (see later for more options on retrieving data).}
+\KeywordTok{$results} \NormalTok{= }\KeywordTok{$db}\NormalTok{->loadObjectList}\OtherTok{();}
+\end{Highlighting}
+\end{Shaded}
+
+comunque guardare:
+http://docs.joomla.org/Selecting\_data\_using\_JDatabase
+
+\subsection{HTML}\label{html}
+
+JHtml::\_(`grid.checkall') -\textgreater{} mostra il chackbox `seleziona
+tutti' (da capire come usarlo in tabella però)
+
+per inserire i css del modulo, metterlo nella view (default.php)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{JHtml::stylesheet}\OtherTok{(}\NormalTok{Juri::base}\OtherTok{()} \NormalTok{. }\StringTok{'components/com_pqz/media/css/com_pqz.css'}\OtherTok{);}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Parametri in input}\label{parametri-in-input}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{$jinput} \NormalTok{= JFactory::getApplication}\OtherTok{()}\NormalTok{->input}\OtherTok{;}
+\KeywordTok{$foo} \NormalTok{= }\KeywordTok{$jinput}\NormalTok{->get}\OtherTok{(}\StringTok{'varname'}\OtherTok{,} \StringTok{'default_value'}\OtherTok{,} \StringTok{'filter'}\OtherTok{);}
+\end{Highlighting}
+\end{Shaded}
+
+per i filtri possibili vedere:
+http://docs.joomla.org/Retrieving\_request\_data\_using\_JInput
+
+\subsection{Internazionalizzazione}\label{internazionalizzazione}
+
+JText::\emph{(`COM\_PQZ\_TEST') -\textgreater{} mostra il testo nella
+linga corrispondente relativo a COM}PQZ\_TEST (es in
+language/en-GB/en-GB.com\_pqz.ini)
+JText::sprintf(`COM\_PQZ\_TEST',$stringa1,$stringa2) -\textgreater{}
+sustituisce i \%s nella stringa COM\_PQZ\_TEST con i valori delle
+stringhe
+
+\section{MCV}\label{mcv}
+
+per passare da una view (ad esempio se aggianciata direttamente da un
+menù con il file default.xml) bisogna creare un modello con il nome:
+della view ed all'interno la classe nome\_compnenteModelNomevista. es:
+file: view/edit\_csv/view.html.php
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{class} \NormalTok{pqzViewedit_csv }\KeywordTok{extends} \NormalTok{JViewLegacy \{}
+\end{Highlighting}
+\end{Shaded}
+
+file models/edit\_csv.php
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{class} \NormalTok{pqzModeledit_csv }\KeywordTok{extends} \NormalTok{JModelList \{}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{JViewLegacy}\label{jviewlegacy}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{$this}\NormalTok{->getNmae}\OtherTok{();} \CommentTok{// print the name of the view}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Controller}\label{controller}
+
+la funzione di default si chiama `default' il model di default ha la lo
+stesso nome del componente, ma si può richiamare un model diverso (es
+helloworld\_model.php) con la funzione:
+$model = $this-\textgreater{}getModel(`helloworld\_model'); poi si
+possono anche lanciare le funzioni direttamente, ma è meglio impostare
+anche il modello della view es:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{$model} \NormalTok{= }\KeywordTok{$this}\NormalTok{->getModel}\OtherTok{(}\StringTok{'choose_quiz'}\OtherTok{);}
+\KeywordTok{$view} \NormalTok{= }\KeywordTok{$this}\NormalTok{->getView}\OtherTok{(}\StringTok{'choose_quiz'}\OtherTok{,} \StringTok{'html'}\OtherTok{);}
+\KeywordTok{$view}\NormalTok{->setModel}\OtherTok{(} \KeywordTok{$model} \OtherTok{,} \KeywordTok{true} \OtherTok{);}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Models}\label{models}
+
+il modello chiamato (es choose\_quiz.pgp) ha una funzione public
+function getItems() \{
+
+\subsection{View}\label{view}
+
+per ottenere i dati dal modello (funzione Get Items). (il modello
+dovrebbe essere stato settato dal controller
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{$out} \NormalTok{= }\KeywordTok{$this}\NormalTok{->get}\OtherTok{(}\StringTok{'Items'}\OtherTok{);}
+\NormalTok{print_pre}\OtherTok{(}\KeywordTok{$out}\OtherTok{);}
+\end{Highlighting}
+\end{Shaded}
+
+è possibile avere più template nella stessa view ad esempio per chiamare
+tmpl/default\_question.php si usa
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{echo} \KeywordTok{$this}\NormalTok{->loadTemplate}\OtherTok{(}\StringTok{"question"}\OtherTok{);}
+\end{Highlighting}
+\end{Shaded}
+
+\end{document}
