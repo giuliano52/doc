@@ -108,6 +108,12 @@ può essere usato anche dentro il tag <Location /path> se di desidera abilitarla
 #GZIP
 
     a2enmod deflate
+
+per verificare: 
+
+    curl -I -H 'Accept-Encoding: gzip,deflate' http://yoursite.com/somefile
+
+e deve restiturie: Content-Encoding: gzip
     
 #Rev-Proxy
 
