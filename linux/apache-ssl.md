@@ -114,7 +114,10 @@ per verificare:
     curl -I -H 'Accept-Encoding: gzip,deflate' http://yoursite.com/somefile
 
 e deve restiturie: Content-Encoding: gzip
-    
+
+per joomla abilitarlo dal pannello di contollo: Global Configuration > Server > Server Settings > GZIP Page Compression
+
+
 #Rev-Proxy
 
 Abilitare il modulo 
