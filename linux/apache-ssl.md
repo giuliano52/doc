@@ -203,15 +203,15 @@ inserire dentro /etc/hosts il record: mail.miosito.it
 
 </VirtualHost>
 
-
+#HTTPS
 <VirtualHost 192.168.1.1:443>
         ServerName mail.miosito.it
 
         # Attivo mod_secuirty
         # SecFilterEngine On
-# Mi sapetto che non ci siano problemi di sicurezza su OWA
-# (Inserito per permance / evitrare problemi)
-
+	
+	# Mi sapetto che non ci siano problemi di sicurezza su OWA
+	# (Inserito per permance / evitrare problemi)
         #SecFilterEngine Off
 
         # disabilito questo controllo per le mail con il % nel subject
@@ -220,7 +220,6 @@ inserire dentro /etc/hosts il record: mail.miosito.it
         AddDefaultCharset iso-8859-1
 
         KeepAlive On
-
 
         SSLEngine On
         SSLCertificateFile /etc/apache2/ssl/webmail-cert.pem
@@ -250,13 +249,5 @@ inserire dentro /etc/hosts il record: mail.miosito.it
 
         ProxyPassReverse /oab  https://mail.miosito.it/oab
         ProxyPass /oab  https://mail.miosito.it/oab
-
 </VirtualHost>
-
-
-
-
-
-
-
 ```
