@@ -45,7 +45,7 @@ tracepath IP                        | come traceroute
 #Utenti e gruppi
 Comando                             | Effetto
 ------------------------------------| ------------------------------------
-useradd -m -G sudo -s /bin/bash archie   | Crea l'utente archie con la home (-m) e con il gruppo aggiuntivo 'sudo'
+useradd -m -G sudo -s /bin/bash pino   | Crea l'utente _pino_ con la home (-m) e con il gruppo aggiuntivo 'sudo'
 
 #Comando Find
 
