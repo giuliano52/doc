@@ -74,5 +74,5 @@ Comando                             | Effetto
 ------------------------------------| ------------------------------------
 seq --format='%f' 3 11				| scrive i numeri da 3 a 11 utilizzando il formato printf (in questo caso floating)
 seq --format="%02g" 5 2 41          | scrive i numeri da 5 a 41 con passo due utilizzando 2 cifre (05 07 09 11 ..)
-DATE=`date +%Y-%m-%d`               | La variabile DATA ha la data in formato YYYY-mm-DD
-DATE=`date +%Y-%m-%d:%H:%M:%S`      | come sopra con l'ora
+DATE=\`date +%Y-%m-%d\`             | La variabile DATA ha la data in formato YYYY-mm-DD
+DATE=\`date +%Y-%m-%d:%H:%M:%S\`    | come sopra con l'ora
