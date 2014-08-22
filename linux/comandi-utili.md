@@ -1,7 +1,7 @@
 ---
 title: Comandi Utili
 author: Giuliano Dedda 
-date: 13/08/2014
+date: 22/08/2014
 ---
 
 #Operazioni su files
@@ -41,6 +41,11 @@ lsblk								| Mostra i dischi e le partizioni
 Comando                             | Effetto
 ------------------------------------| ------------------------------------
 tracepath IP                        | come traceroute
+
+#Utenti e gruppi
+Comando                             | Effetto
+------------------------------------| ------------------------------------
+useradd -m -G sudo -s /bin/bash archie   | Crea l'utente archie con la home (-m) e con il gruppo aggiuntivo 'sudo'
 
 #Comando Find
 
