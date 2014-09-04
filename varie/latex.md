@@ -37,8 +37,9 @@ Per includere un file esterno
 #Esempi Base
 
 ##Book
-
+```
 \documentclass[11pt]{book}            
 \begin{document}
 Prova
 \end{document}
+```
