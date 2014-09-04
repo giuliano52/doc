@@ -33,3 +33,9 @@ Nel qual caso bisogna anche configurare il dns: /etc/network
 
     search dominio.com
     nameserver 130.186.1.53  # dns.cineca.it
+    
+#APT
+
+per rimuovere i pacchetti orfani e non più utilizzati (come ad esempio i vecchi kernel)
+
+    apt-get autoremove
