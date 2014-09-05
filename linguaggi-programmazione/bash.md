@@ -26,8 +26,19 @@ done
 ```
 
 o in una sola riga
-   
-    for f in dir_to_scan/* ; do echo $f ; done
+```   
+for f in dir_to_scan/* ; do echo $f ; done
+```
+
+Elementi di un array: 
+```
+array=( one two three )
+for i in "${array[@]}"
+do
+	echo $i
+done
+```
+
 
 
 ##WalkTree
