@@ -34,6 +34,14 @@ Per includere un file esterno
     \include{nomefile} 		 % Include il file esterno 
 
 
+#Tabelle
+
+per dividere la tabella su più pagine si può usare il pacchetto longtable
+
+per ripetere la prima riga per ogni pagina alla fine della prima riga inserire:
+
+    \endhead
+
 #Esempi Base
 
 ##Book
