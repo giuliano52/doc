@@ -41,6 +41,21 @@ per dividere la tabella su più pagine si può usare il pacchetto longtable
 per ripetere la prima riga per ogni pagina alla fine della prima riga inserire:
 
     \endhead
+    
+#Libretti e fascicoli
+```
+% genera il libretto 
+\usepackage{geometry}
+\geometry {centering,nohead }
+\geometry{width=108.5mm,height=170mm}
+
+\usepackage[print,1to1]{booklet}
+\nofiles
+\pagespersignature{36}
+
+\begin{document}
+\setpdftargetpages
+```
 
 #Esempi Base
 
