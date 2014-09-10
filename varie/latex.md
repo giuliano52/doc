@@ -14,6 +14,10 @@ Per un documento in italiano
     \usepackage[utf8x]{inputenc}		% se ci sono problemi con file unicode, meglio usare utf8x
     \usepackage[italian]{babel}			% Adatta LaTeX alle convenzioni tipografiche italiane, e ridefinisce alcuni titoli in italiano, come "Capitolo" al posto di "Chapter"
 
+per il check del documento senza generare (molto più veloce) , poi basta commentare la seconda riga
+
+    \usepackage{syntonly}
+    \syntaxonly
 
 Per le immagini
 
