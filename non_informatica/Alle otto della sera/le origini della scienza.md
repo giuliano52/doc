@@ -20,6 +20,8 @@ Tale idea fu ripresa da __Aristarco di Samo__ che la estese e ipotizzò che la t
 ne avesse un altro di rivoluzione attorno al sole. Questa idea, fu poi abbandonata da Tolomeo che ipotizzo la terra ferma al centro dell'universo.
 
 ##4. La sfera delle stelle fisse
+__Ipparco da Nicea__ dopo che ha visto nel cielo una nuova stella (supernova) decise di complare un catalogo stellare per permettere ai posteri di verificare se le stelle rimangono sempre le stesse e se si muovono molto lentamente. 
+2000 Anni più tardi Halley grazie a questo catalogo, riuscì a determinare che alcune stelle si erano mosse. In pratica è il più lungo esperimento della storia.
 
 ##5. Matematica e Geometria
 I greci hanno avuto il mertio di inventare la dimostrazione dei teoremi, ad esempio il teorema di Pitagora, pur essendo noto anche in epoca 
