@@ -23,5 +23,5 @@ ne avesse un altro di rivoluzione attorno al sole. Questa idea, fu poi abbandona
 
 ##5. Matematica e Geometria
 I greci hanno avuto il mertio di inventare la dimostrazione dei teoremi, ad esempio il teorema di Pitagora, pur essendo noto anche in epoca 
-precedente, non era mai stato dimostrato. La dimostrazione delli teoremi si lega al fatto che 
+precedente, non era mai stato dimostrato. La dimostrazione dei teoremi si lega al fatto che la democrazia era la forma di governo in Grecia. In pratica non c'è più il parere incontrastabile di una persona, ma chiunque può dire la sua, e questo ha portato alla nascita della dimostrazione, in cui non esisteva nessuno che non poteva essere contraddetto
 
