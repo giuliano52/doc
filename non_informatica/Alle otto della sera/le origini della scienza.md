@@ -27,3 +27,5 @@ __Ipparco da Nicea__ dopo che ha visto nel cielo una nuova stella (supernova) de
 I greci hanno avuto il mertio di inventare la dimostrazione dei teoremi, ad esempio il teorema di Pitagora, pur essendo noto anche in epoca 
 precedente, non era mai stato dimostrato. La dimostrazione dei teoremi si lega al fatto che la democrazia era la forma di governo in Grecia. In pratica non c'è più il parere incontrastabile di una persona, ma chiunque può dire la sua, e questo ha portato alla nascita della dimostrazione, in cui non esisteva nessuno che non poteva essere contraddetto
 
+##6. Ottica
+Gli antichi per ottica intendevano più una scienza della percezione, che una scienza oggettiva. __Euclide__ ha scritto un trattato anche sull'ottica, in cui si parla che gli oggetti più lontani si vedono peggio in quanto ci sono meno raggi visivi che arrivano. Questo fatto potrebbe essere interpretato come meno raggi che arrivano alla retina.
