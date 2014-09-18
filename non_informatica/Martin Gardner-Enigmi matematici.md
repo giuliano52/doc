@@ -2,7 +2,7 @@
 ##2. Magia con le matrici
 i quadrati additivi hanno la proprietà che scegliendo a caso un numero ed eliminando la riga e la colonna relativa, ripetendo il processo per tutti i numeri 
 rimasti si scopre che la somma è sempre costante ed è uguale alla somma dei numeri che hanno generato il quadrato. es:
-_  | 2  | 3 | 5
+a  | 2  | 3 | 5
 ---|----|---|--
 7  | 9  |10 |12
 0  | 2  | 3 | 5
