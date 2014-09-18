@@ -29,3 +29,20 @@ precedente, non era mai stato dimostrato. La dimostrazione dei teoremi si lega a
 
 ##6. Ottica
 Gli antichi per ottica intendevano più una scienza della percezione, che una scienza oggettiva. __Euclide__ ha scritto un trattato anche sull'ottica, in cui si parla che gli oggetti più lontani si vedono peggio in quanto ci sono meno raggi visivi che arrivano. Questo fatto potrebbe essere interpretato come meno raggi che arrivano alla retina.
+
+##7. Legge di Snell
+la legge di Snell potrebbe essere stata scoperta dai greci, a prova di ciò ci sono i seguenti 
+indizi: 
+- si sapeva che in caso di riflessione la luce percorre il percorso minimo
+- c'è un commentatore arabo che riporta la legge di snell nel 900 
+- ci sono commenti su oggetti miracolosi che avvicinano oggetti lontani
+- sono state ritrovate lenti nell'isola di Creta con un utilizzo molto probabilmente ottico
+
+##8. La caduta dei gravi
+Si sapeva che il moto era accellerato, es  un oggetto fa più rumore se cade da più in alto o il flusso 
+d'acqua si assotiglia dall'alto in basso
+
+
+#9. Archimede
+Archimede è noto per degli aneddoti molto probabilmente falsi, ma era prima di tutto un grande matematico. 
+Ci sono rimaste le sue opere e questo permette di studiarlo direttamente. 
