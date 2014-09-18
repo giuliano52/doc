@@ -46,3 +46,6 @@ d'acqua si assotiglia dall'alto in basso
 #9. Archimede
 Archimede è noto per degli aneddoti molto probabilmente falsi, ma era prima di tutto un grande matematico. 
 Ci sono rimaste le sue opere e questo permette di studiarlo direttamente. 
+Archimede è noto per il principio di archimede , (in realtà il vero principio è che una zona di fluido è sottoposta alla pressione della colonna di fluido che ha sopra di se. ) 
+Grazie a questo principio ne segue la legge di archimede, e che la terra dato che è sferica un tempo doveva essere fluida.
+Inoltre Archimede ha studiato molto il galleggiamento dei solidi in quanto hanno come applicazione pratica il galleggiamento delle navi.
