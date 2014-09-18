@@ -20,13 +20,8 @@ all' inizio inserire :
 ---
 title: Test
 author: Author Name
-header-includes:
-    - \usepackage{fancyhdr}
-    - \pagestyle{fancy}
-    - \fancyhead[CO,CE]{This is fancy}
-    - \fancyfoot[CO,CE]{So is this}
-    - \fancyfoot[LE,RO]{\thepage}
-abstract: This is a pandoc test . . . 
+abstract: This is a test . . . 
+date: 29/7/2014
 ---
 ```
 
