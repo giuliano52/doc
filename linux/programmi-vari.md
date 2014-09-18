@@ -147,6 +147,31 @@ in /etc/davfs2/secrets inserire:
 per montare un disco remoto con l'utente_a inserire in /etc/fstab
 
     https://dav.box.com/dav /home/utente_a/mnt/box.com    davfs   defaults,uid=utente_a,gid=gruppo_a,noauto  0       0
+#TOR
+
+    pacman -S tor
+
+
+modificare /etc/tor/torrc aggiungendo
+```
+############# AGGIUNTE ###########
+HTTPProxy proxy.local.net:8080
+HTTPProxyAuthenticator DOMINIO\user:password
+
+HTTPSProxy proxy.local.net:8080
+HTTPSProxyAuthenticator DOMINIO\user:password
+```
+
+Far ripartire il servizio
+
+    /etc/init.d/tor restart
+o 
+
+    systemctl start tor.service
+    systemctl enable tor.service
+
+Installare POLIPO (vedi capitolo apposito)
+far puntare i proxy su 127.0.0.1:8123
 
 	
 #Wget
