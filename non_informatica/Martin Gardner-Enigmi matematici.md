@@ -9,6 +9,7 @@ a  | 2  | 3 | 5
 0  | 2  | 3 | 5
 1  | 3  | 4 | 6
 
+
 la somma è 2+3+5+7+0+1 = 18
 può essere usata come biglietto di auguri riportando la somma dell'età del festeggiato
 
