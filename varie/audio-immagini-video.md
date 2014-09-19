@@ -1,7 +1,7 @@
 ---
 title: Audio Immagini Video
 author: Giuliano Dedda 
-date: 28/07/2014
+date: 19/09/2014
 ---
 
 #FFMPEG
@@ -54,3 +54,10 @@ per fare una copia di sucurezza di un DVD su HD
     sudo mount -n /dev/sr0 ~/mnt/tmp/
     vobcopy -m ~/mnt/tmp/
  
+#IMAGEMAGIK
+
+per unire più immagini verticalmente
+
+    convert index-61_[1-4].png -append out1.png
+   
+
