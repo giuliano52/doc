@@ -11,7 +11,7 @@ per le user-dir i permessi della home e della public_html devono essere:
     chmod o+x ~
     chmod o+x ~/public_html
     
-far ripartire https.service
+far ripartire httpd.service. Per il _php_ vedi la wiki di arch
     
 
 # Varie
