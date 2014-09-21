@@ -4,6 +4,16 @@ author: Giuliano Dedda
 date: 20/08/2014
 ---
 
+#Apache su Arch
+
+per le user-dir i permessi della home e della public_html devono essere:
+
+    chmod o+x ~
+    chmod o+x ~/public_html
+    
+far ripartire https.service
+    
+
 # Varie
 per vedere i moduli attivi:
 
