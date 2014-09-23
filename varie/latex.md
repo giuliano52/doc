@@ -4,6 +4,9 @@ author: Giuliano Dedda
 date: 31/7/2014
 ---
 
+per pdflatex il file deve essere in codifica UTF-senza BOM (ASCI-UTF)
+
+
 #Comandi vari
 
 ##Negli Header
