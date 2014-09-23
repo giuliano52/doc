@@ -60,4 +60,8 @@ per unire più immagini verticalmente
 
     convert index-61_[1-4].png -append out1.png
    
+Converte tutte le immagini png di una cartella in jpg
+
+    mogrify -format jpg *.png
+
 
