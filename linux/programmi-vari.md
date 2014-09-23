@@ -126,7 +126,8 @@ e lanciare
     pdflatex uno.tex
 	
 comando per la documentazione
-	pandoc  input.md -s  -o output.pdf  -V geometry:"top=1cm, bottom=1.5cm, left=1cm, right=1cm"	
+
+    pandoc  input.md -s  -o output.pdf  -V geometry:"top=1cm, bottom=1.5cm, left=1cm, right=1cm"	
 
 #Systemd
 
