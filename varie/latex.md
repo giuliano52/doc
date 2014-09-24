@@ -34,7 +34,7 @@ per fare una funzione custum
 
     \newcommand\abs[1]{\left|#1\right|}
 
-##Nel document
+##Nel documento
 
 Per includere un file esterno 
 
@@ -63,6 +63,11 @@ per ripetere la prima riga per ogni pagina alla fine della prima riga inserire:
 \begin{document}
 \setpdftargetpages
 ```
+
+#Formattazione testo
+
+se serve formattare in italico una grossa parte di 
+testo (anche con paragrafi) usare: \itshape all'inizio e \normalfont alla fine.
 
 #Esempi Base
 
