@@ -11,11 +11,9 @@ per pdflatex il file deve essere in codifica UTF-senza BOM (ASCI-UTF)
 
 ##Negli Header
 
-Per un documento in italiano 
+Per un documento in italiano -> vedi latex-examples/base.tex
 
-    \usepackage[utf8]{inputenc}			% Consente l'uso caratteri accentati italiani
-    \usepackage[utf8x]{inputenc}		% se ci sono problemi con file unicode, meglio usare utf8x
-    \usepackage[italian]{babel}			% Adatta LaTeX alle convenzioni tipografiche italiane, e ridefinisce alcuni titoli in italiano, come "Capitolo" al posto di "Chapter"
+
 
 per il check del documento senza generare (molto più veloce) , poi basta commentare la seconda riga
 
