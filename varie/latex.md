@@ -14,7 +14,6 @@ per pdflatex il file deve essere in codifica UTF-senza BOM (ASCI-UTF)
 Per un documento in italiano -> vedi latex-examples/base.tex
 
 
-
 per il check del documento senza generare (molto più veloce) , poi basta commentare la seconda riga
 
     \usepackage{syntonly}
@@ -22,7 +21,7 @@ per il check del documento senza generare (molto più veloce) , poi basta commen
 
 Per le immagini
 
-    \usepackage{graphicx}					% per includere le grafiche esterne 
+    vedi latex-examples/immagini.tex
 
 poi usare
 
@@ -65,14 +64,11 @@ per ripetere la prima riga per ogni pagina alla fine della prima riga inserire:
 #Formattazione testo
 
 se serve formattare in italico una grossa parte di 
-testo (anche con paragrafi) usare: \itshape all'inizio e \normalfont alla fine.
+testo (anche con paragrafi) usare: 
 
-#Esempi Base
+    \itshape  e \normalfont 
 
-##Book
-```
-\documentclass[11pt]{book}            
-\begin{document}
-Prova
-\end{document}
-```
+se non voglio che ci sia una separazione di riga devo usare la tilde ~ es:
+
+    fig~\ref{fig:f001}
+    
