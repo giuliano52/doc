@@ -72,3 +72,7 @@ se non voglio che ci sia una separazione di riga devo usare la tilde ~ es:
 
     fig~\ref{fig:f001}
     
+#Stili
+per un diverso tipo di capitoli: 
+
+    \usepackage[Sonny]{fncychap}
