@@ -76,3 +76,8 @@ se non voglio che ci sia una separazione di riga devo usare la tilde ~ es:
 per un diverso tipo di capitoli: 
 
     \usepackage[Sonny]{fncychap}
+
+oppure
+
+    \usepackage[Bjornstrup]{fncychap}
+    
