@@ -45,7 +45,8 @@ tracepath IP                        | come traceroute
 #Utenti e gruppi
 Comando                             | Effetto
 ------------------------------------| ------------------------------------
-useradd -m -G sudo -s /bin/bash pino   | Crea l'utente _pino_ con la home (-m) e con il gruppo aggiuntivo 'sudo'
+useradd -m -G sudo -s /bin/bash pino    | Crea l'utente _pino_ con la home (-m) e con il gruppo aggiuntivo 'sudo'
+usermod -aG sudo pino                   | Aggiunge il gruppo sudo all'utente _pino_
 
 #Comando Find
 
