@@ -6,5 +6,5 @@ convertire con tex2ebook.py es:
 
     latex/main.tex -o main.epub
 
-poi con sigil rimettere a posto l'indice
+poi con _Sigil_ rimettere a posto l'indice
     
