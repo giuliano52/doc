@@ -34,13 +34,15 @@ mettere a posto tutte le immagini trasformandole tutte in png e poi unendole se 
 
      ~/public_html/pyhub/varie/from_epub_to_latex/join-images.py tmp/img/
 
+correggo all'interno del latex gli includegraphics
 
+    cd latex
     ~/public_html/pyhub/varie/from_epub_to_latex/correct_latex.py global.tex
 
+Ora si può iniziare a correggere manualemnte:
 
-
-in tmp si troveranno tutte le immagini
-
+- Eliminare i doppi \n 
+- eliminare le immagini doppie
 
     
     
