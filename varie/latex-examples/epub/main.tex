@@ -1,0 +1,52 @@
+\documentclass[a4paper]{book}
+
+\newcommand{\docversion}{0.0.1}
+\newcommand{\dataversion}{5 ottobre 2014}
+
+% 0.0.1
+% prima versione
+
+
+\usepackage[T1]{fontenc}				% per visualizzare i caratteri speciali 
+\usepackage[utf8x]{inputenc}
+
+\usepackage[italian]{babel}         % Adatta LaTeX alle convenzioni tipografiche italiane, e ridefinisce alcuni titoli in italiano, come "Capitolo" al posto di "Chapter"
+
+\usepackage[bookmarks]{hyperref}	% genera l'indice all'interno dei documenti PDF
+
+\usepackage{amssymb,amsmath}			% per matematica
+\usepackage{graphicx}					% per le figure
+
+\usepackage{booktabs}					% per le tabelle
+
+\hypersetup{breaklinks=true,					% per i link all'interno del PDF
+            bookmarks=true,
+            pdfauthor={Autore},
+            pdftitle={Titolo},
+            colorlinks=false,
+            citecolor=blue,
+            urlcolor=blue,
+            linkcolor=magenta,
+            pdfborder={0 0 0}}
+
+% Aggiunte
+\usepackage[font={small,it}]{caption}   % per fare le caption in piccolo e italico
+
+\usepackage{chngcntr}					% per la numerazione progressiva delle immagini (e non in base al capitolo)
+\counterwithout{figure}{chapter}		% per la numerazione progressiva delle immagini (e non in base al capitolo)
+
+\usepackage[Bjornstrup]{fncychap}
+
+\title{Titolo}
+\author{Autore}
+
+\begin{document}
+
+\frontmatter
+\include{001-inizio}
+
+\mainmatter
+
+\include{002-libro} 
+
+\end{document}
