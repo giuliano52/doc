@@ -13,6 +13,7 @@ creare le directory base
     mkdir tmp
 
 scompattare il dile epub per estrarre le immagini
+
     unzip orig/libro.epub -d tmp/
 
 copiare il tempalte latex di base 
@@ -21,14 +22,18 @@ copiare il tempalte latex di base
 
 creare il latex con pandoc
 
-    pandoc libro.epub -o latex/global.tex
+    pandoc orig/libro.epub -o latex/global.tex
 
-mettere a posto tutte le immagini
+mettere a posto tutte le immagini trasformandole tutte in png e poi unendole se sono separate verticalmente
 
 
      mogrify -format png tmp/*.jpg
      mkdir tmp/img
      mv tmp/*.png tmp/img
+     rm tmp/*.jpg
+
+     ~/public_html/pyhub/varie/from_epub_to_latex/join-images.py tmp/img/
+
 
     ~/public_html/pyhub/varie/from_epub_to_latex/correct_latex.py global.tex
 
