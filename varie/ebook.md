@@ -13,7 +13,6 @@
     cp tmp/*.jpg latex/Images
     cp tmp/*.png latex/Images
     
-    
 
 in tmp si troveranno tutte le immagini
 
