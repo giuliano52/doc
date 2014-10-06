@@ -6,17 +6,32 @@
 - eseguire i seguenti comandi:
 
 
+creare le directory base 
+
     mkdir latex
-    mkdir tmp
-    unzip orig/libro.epub -d tmp/
     mkdir latex/Images
-    cp tmp/*.jpg latex/Images
-    cp tmp/*.png latex/Images
+    mkdir tmp
 
-copiare 
+scompattare il dile epub per estrarre le immagini
+    unzip orig/libro.epub -d tmp/
 
-    cp main.tex latex
-   
+copiare il tempalte latex di base 
+
+    cp ~/public_html/dochub/varie/latex-examples/epub/main.tex latex/   
+
+creare il latex con pandoc
+
+    pandoc libro.epub -o latex/global.tex
+
+mettere a posto tutte le immagini
+
+
+     mogrify -format png tmp/*.jpg
+     mkdir tmp/img
+     mv tmp/*.png tmp/img
+
+    ~/public_html/pyhub/varie/from_epub_to_latex/correct_latex.py global.tex
+
 
 
 in tmp si troveranno tutte le immagini
