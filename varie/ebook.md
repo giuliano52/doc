@@ -1,4 +1,7 @@
 
+#Creazione Latex
+
+    pandoc input.epub -o outpout.tex
 
 #Creazione da Latex
 
