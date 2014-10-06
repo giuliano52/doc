@@ -3,15 +3,15 @@
 
 - per prima cosa convertire in epub con calibre il libro
 - creare una directory di lavoro _orig_ in cui inserire sia il pdf originale che l'epub creato da calibre
-- eseguire i seguenti comandi 
+- eseguire i seguenti comandi:
 
 
     mkdir latex
-   mkdir tmp
-   unzip orig/libro.epub -d tmp/
-   mkdir latex/Images
-   cp tmp/*.jpg latex/Images
-   cp tmp/*.png latex/Images
+    mkdir tmp
+    unzip orig/libro.epub -d tmp/
+    mkdir latex/Images
+    cp tmp/*.jpg latex/Images
+    cp tmp/*.png latex/Images
 
 copiare 
 
