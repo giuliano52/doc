@@ -16,3 +16,15 @@ $stmt->bindValue(':id', 1, SQLITE3_INTEGER);
 $result = $stmt->execute();
 var_dump($result->fetchArray());
 ```
+
+#MYSQL / MARIA DB 
+
+## Backup e Restore
+per fare il backup di un database:
+
+    mysqldump database_name > nomefile.mysql
+    mysqldump -u root -p database_name | bzip2 > nomefile.mysql.bz2
+
+per il restore:
+
+    mysql nome_database < backup.mysql
