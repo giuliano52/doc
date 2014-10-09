@@ -41,6 +41,8 @@ lsblk								| Mostra i dischi e le partizioni
 Comando                             | Effetto
 ------------------------------------| ------------------------------------
 tracepath IP                        | come traceroute
+sudo netstat -plnt                  | vede le porte aperte con relativo processo
+lsof -Pan -i tcp -i udp             | come sopra ma usa lsof
 
 #Utenti e gruppi
 Comando                             | Effetto
