@@ -19,8 +19,8 @@ es:
 su arch : 
 installare  yaourt -S nfs-utils (verificare)
 
-sudo systemctl start rpcbind.service
-sudo systemctl start nfs-client.target
+    sudo systemctl start rpcbind.service
+    sudo systemctl start nfs-client.target
 
 
 su debain: installare anche nfs-common  (Verificare)
