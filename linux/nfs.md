@@ -17,8 +17,8 @@ es:
 
 #CLIENT
 su arch : 
-installare  yaourt -S nfs-utils (verificare)
 
+    sudo pacman -S nfs-utils
     sudo systemctl start rpcbind.service
     sudo systemctl start nfs-client.target
 
