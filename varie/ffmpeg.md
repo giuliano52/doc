@@ -45,7 +45,13 @@ Parametri		| Descrizione
 -bt tolerance	| Set video bitrate tolerance (in bits, default 4000k). Has a minimum value of: (target_bitrate/target_framerate). In 1-pass mode, bitrate tolerance specifies how far ratecontrol is willing to deviate from the target average bitrate value. This is not related to min/max bitrate. Lowering tolerance too much has an adverse effect on quality. 
 -aspect aspect	| aspect ratio (4:3, 16:9 or 1.3333, 1.7777). 
 
-#Encoding con vari codec
+#Codec
+
+visualizza i codec o i formati disponibili
+
+    ffmpeg -codecs
+    ffmpeg -formats
+  
 ##H265 
 
     ffmpeg -i input -c:v libx265 -c:a copy output.mp4
