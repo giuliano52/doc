@@ -1,6 +1,8 @@
-% Backup e Restore
-% Giuliano Dedda 
-% 10/07/2014
+---
+title: Backup e Restore
+author: Giuliano Dedda 
+date: 12/10/2014
+---
 
 #Duplicity
 
