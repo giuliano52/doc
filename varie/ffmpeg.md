@@ -54,7 +54,7 @@ visualizza i codec o i formati disponibili
   
 ##H265 
 
-    ffmpeg -i input -c:v libx265 -c:a copy output.mp4
+    ffmpeg -i input -c:v libx265 -c:a copy output.mkv
   
 ##H264 
 
