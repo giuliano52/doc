@@ -102,10 +102,16 @@ systemctl -t service -a 	 | mostra i servizi al boot
 
 installare davfs2 
 
+###Proxy
+in /etc/davfs2/davfs2.conf inserire
+
+    proxy 127.0.0.1:28080
+
+###montare le directory
+
 in /etc/davfs2/secrets inserire:
     
     https://dav.box.com/dav nome_utente_box_com@email.info password_box_com
-
 
 per montare un disco remoto con l'utente_a inserire in /etc/fstab
 
