@@ -6,17 +6,22 @@ date: 12/10/2014
 
 #Duplicity
 
-      yaourt -S duplicity
-bisogna avere già  una chiave GPG (vedi doc opportuno)
+    yaourt -S duplicity
+    
+bisogna avere già una chiave GPG (vedi doc opportuno)
 
 ##backup
 
-      duplicity sorgente destinazione
-      duplicity /home/me scp://uid@other.host//usr/backup
+    duplicity sorgente destinazione
+    duplicity /home/me scp://uid@other.host//usr/backup
 
 ##Restore
 
-      duplicity scp://uid@other.host//usr/backup /home/me
+    duplicity scp://uid@other.host//usr/backup /home/me
+      
+##Stato
+
+    duplicity collection-status file:///home/backup-folder
     
 #S3QL
 tool per utilizzare un fileserver remoto (anche locale con encryption deduplicazione e compressione).
