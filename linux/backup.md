@@ -19,7 +19,13 @@ bisogna avere già una chiave GPG (vedi doc opportuno)
 
     duplicity scp://uid@other.host//usr/backup /home/me
       
-##Stato
+##altro
+    
+Mostra la lista dei files :    
+
+    duplicity list-current-files file:///home/backup-folder
+
+Mostra la lista dei backup: 
 
     duplicity collection-status file:///home/backup-folder
     
