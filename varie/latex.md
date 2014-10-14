@@ -75,8 +75,12 @@ se non voglio che ci sia una separazione di riga devo usare la tilde ~ es:
 se voglio che il testo venga presentato così com'è usare 
 
     \begin{verbatim} e \end{verbatim}
+
+##Epigrafi (Citazioni)
+
+    \epigraph{Citazione completa}{Autore}
     
-#Stili
+#Temi
 per un diverso tipo di capitoli (il pacchetto fncychap ha parecchi stili diversi) ad esempio:
 
     \usepackage[Sonny]{fncychap}
