@@ -72,6 +72,10 @@ se non voglio che ci sia una separazione di riga devo usare la tilde ~ es:
 
     fig~\ref{fig:f001}
     
+se voglio che il testo venga presentato così com'è usare 
+
+    \begin{verbatim} e \end{verbatim}
+    
 #Stili
 per un diverso tipo di capitoli (il pacchetto fncychap ha parecchi stili diversi) ad esempio:
 
