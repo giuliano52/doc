@@ -1,5 +1,5 @@
 ---
-title: Apache e SSL
+title: Apache
 author: Giuliano Dedda 
 date: 20/08/2014
 ---
