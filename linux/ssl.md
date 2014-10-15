@@ -2,15 +2,14 @@
 
 Da: [http://www.flatmtn.com/computer/Linux-SSLCertificates.html]
 
-
     mkdir sslcert
     chmod 0700 sslcert
     cd sslcert
-mkdir certs private request
+    mkdir certs private request
+    echo '100001' >serial
+    touch certindex.txt
 
-echo '100001' >serial
-touch certindex.txt
-vim openssl.cnf
+creare il vile _openssl.cnf_ in questo modo 
 
 ```
 #
