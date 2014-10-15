@@ -270,3 +270,8 @@ inserire dentro /etc/hosts il record: mail.miosito.it
         ProxyPass /oab  https://mail.miosito.it/oab
 </VirtualHost>
 ```
+
+##phpmyadmin
+
+se si desidera che phpmyadmin sia visibile solo per un virtual host bisogna copiare il contenuto del file /etc/apache2/conf.d/phpmyadmin.conf nel virtual host di pertinenza e quindi cancellare il file. 
+
