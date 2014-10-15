@@ -11,8 +11,6 @@ mkdir certs private request
 echo '100001' >serial
 touch certindex.txt
 vim openssl.cnf
------------
-
 
 ```
 #
