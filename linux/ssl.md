@@ -14,6 +14,7 @@ vim openssl.cnf
 -----------
 
 
+```
 #
 # OpenSSL configuration file.
 #
@@ -49,7 +50,7 @@ emailAddress                    = optional
 
 
 [ req ]
-default_bits				= 1024			# Size of keys
+default_bits				= 2048			# Size of keys
 default_keyfile			= key.pem		# name of generated keys
 default_md					= md5				# message digest algorithm
 string_mask				= nombstr		# permitted characters
@@ -75,9 +76,9 @@ commonName_max				= 64
 # Default values for the above, for consistency and less typing.
 # Variable name				Value
 #------------------------	  ------------------------------
-0.organizationName_default	= GSI
-localityName_default			= Mogliano
-stateOrProvinceName_default	= Veneto
+0.organizationName_default	= Zuccabar
+localityName_default			= Rome
+stateOrProvinceName_default	= Lazio
 countryName_default			= IT
 
 [ v3_ca ]
@@ -88,26 +89,30 @@ authorityKeyIdentifier		= keyid:always,issuer:always
 [ v3_req ]
 basicConstraints				= CA:FALSE
 subjectKeyIdentifier			= hash
-
+```
 
 -----
 
-# per il certificato di root:
-openssl req -new -x509 -extensions v3_ca -keyout private/cakey.pem -out certs/cacert.pem -days 1825 -config ./openssl.cnf
+per il certificato di root:
 
+    openssl req -new -x509 -extensions v3_ca -keyout private/cakey.pem -out certs/cacert.pem -days 1825 -config ./openssl.cnf
 
+per fare la richiesta di certificato:
 
-# per fare la richiesta di certificato:
-openssl req -new -nodes -out request/name-req.pem -keyout private/name-key.pem -config ./openssl.cnf
+    openssl req -new -nodes -out request/name-req.pem -keyout private/name-key.pem -config ./openssl.cnf
 
-# per firmare la richiesta
-openssl ca -out certs/name-cert.pem -config ./openssl.cnf -infiles request/name-req.pem
+per firmare la richiesta
 
-# per convertire un certificato in pkcs12 (Chiave pubblica e privata in un unico file)
-openssl pkcs12 -export -in certs/name-cert.pem -inkey private/name-key.pem -out name.p12
+    openssl ca -out certs/name-cert.pem -config ./openssl.cnf -infiles request/name-req.pem
+
+per convertire un certificato in pkcs12 (Chiave pubblica e privata in un unico file)
+
+    openssl pkcs12 -export -in certs/name-cert.pem -inkey private/name-key.pem -out name.p12
 
 
 Script per i tre comandi assieme
+
+```
 #!/bin/sh
 
 NOME=$1
@@ -122,32 +127,32 @@ openssl req -new -nodes -out request/$NOME-req.pem -keyout private/$NOME-key.pem
 openssl ca -out certs/$NOME-cert.pem -config ./openssl.cnf -infiles request/$NOME-req.pem
 # per convertire un certificato in pkcs12 (Chiave pubblica e privata in un unico file)
 openssl pkcs12 -export -in certs/$NOME-cert.pem -inkey private/$NOME-key.pem -out pks12/$NOME.p12
+```
 
-
-
-# Direttive per apache:
-
-SSLEngine On
-SSLCertificateFile /etc/apache2/ssl/name-cert.pem
-SSLCertificateKeyFile /etc/apache2/ssl/name-key.pem
-
-SSLCertificateFile /etc/apache2/ssl/www.zuccabar.it-cert.pem
-SSLCertificateKeyFile /etc/apache2/ssl/www.zuccabar.it-key.pem
-
-
-########
 il file di configurazione in policy_match ha la possibilità di impostare che certi campi debbano obbligatoriamente essere uguali:
 es: 
-countryName                     = supplied
-# oppure
-countryName                     = match
+
+    countryName                     = supplied
+
+oppure
+
+    countryName                     = match
 
 
-######## IIS
+
+#Apache:
+
+    SSLEngine On
+    SSLCertificateFile /etc/apache2/ssl/name-cert.pem
+    SSLCertificateKeyFile /etc/apache2/ssl/name-key.pem
+
+
+
+
+#IIS
 Fare la richiesta su IIS
 
-openssl ca -out certs/hpsim-cer.pem -config ./openssl.cnf -infiles request/hpsim-req.pem
-
+    openssl ca -out certs/hpsim-cer.pem -config ./openssl.cnf -infiles request/hpsim-req.pem
 
 
 Per generare la certification autority completa: installare il certificato di root ( certs/cacert.pem ) nei trusted certificates. 
