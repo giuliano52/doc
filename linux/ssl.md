@@ -27,14 +27,14 @@ default_ca				= CA_default
 serial					= $dir/serial
 database				= $dir/certindex.txt
 new_certs_dir			= $dir/certs
-certificate			= $dir/certs/cacert.pem
-private_key			= $dir/private/cakey.pem
-default_days			= 365
+certificate		    	= $dir/certs/cacert.pem
+private_key			    = $dir/private/cakey.pem
+default_days			= 730   # 2 anni
 default_md				= sha1 # meglio di md5
 preserve				= no
-email_in_dn			= no
-nameopt				= default_ca
-certopt				= default_ca
+email_in_dn		    	= no
+nameopt				    = default_ca
+certopt				    = default_ca
 policy					= policy_match
 
 [ policy_match ]
@@ -48,25 +48,25 @@ emailAddress                    = optional
 
 [ req ]
 default_bits				= 2048			# Size of keys
-default_keyfile			= key.pem		# name of generated keys
-default_md					= md5				# message digest algorithm
-string_mask				= nombstr		# permitted characters
-distinguished_name		= req_distinguished_name
-req_extensions			= v3_req
+default_keyfile			    = key.pem		# name of generated keys
+default_md					= sha1				# message digest algorithm
+string_mask				    = nombstr		# permitted characters
+distinguished_name		    = req_distinguished_name
+req_extensions			    = v3_req
 
 [ req_distinguished_name ]
 # Variable name				Prompt string
 #-------------------------	  ----------------------------------
 0.organizationName			= Organization Name (company)
-organizationalUnitName			= Organizational Unit Name (department, division)
+organizationalUnitName		= Organizational Unit Name (department, division)
 emailAddress				= Email Address
 emailAddress_max			= 40
 localityName				= Locality Name (city, district)
 stateOrProvinceName			= State or Province Name (full name)
-countryName				= Country Name (2 letter code)
+countryName				    = Country Name (2 letter code)
 countryName_min				= 2
 countryName_max				= 2
-commonName				= Common Name (hostname, IP, or your name)
+commonName				    = Common Name (hostname, IP, or your name)
 commonName_max				= 64
 
 
@@ -74,25 +74,25 @@ commonName_max				= 64
 # Variable name				Value
 #------------------------	  ------------------------------
 0.organizationName_default	= Zuccabar
-localityName_default			= Rome
+localityName_default		= Rome
 stateOrProvinceName_default	= Lazio
 countryName_default			= IT
 
 [ v3_ca ]
-basicConstraints				= CA:TRUE
-subjectKeyIdentifier			= hash
+basicConstraints			= CA:TRUE
+subjectKeyIdentifier		= hash
 authorityKeyIdentifier		= keyid:always,issuer:always
 
 [ v3_req ]
-basicConstraints				= CA:FALSE
-subjectKeyIdentifier			= hash
+basicConstraints			= CA:FALSE
+subjectKeyIdentifier		= hash
 ```
 
 -----
 
 per il certificato di root:
 
-    openssl req -new -x509 -extensions v3_ca -keyout private/cakey.pem -out certs/cacert.pem -days 1825 -config ./openssl.cnf
+    openssl req -new -x509 -extensions v3_ca -keyout private/cakey.pem -out certs/cacert.pem -newkey 4096 -days 1825 -config ./openssl.cnf
 
 per fare la richiesta di certificato:
 
