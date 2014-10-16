@@ -5,7 +5,7 @@ Da: [http://www.flatmtn.com/computer/Linux-SSLCertificates.html]
     mkdir sslcert
     chmod 0700 sslcert
     cd sslcert
-    mkdir certs private request
+    mkdir certs private request pkcs12
     echo '100001' >serial
     touch certindex.txt
 
@@ -104,7 +104,7 @@ per firmare la richiesta
 
 per convertire un certificato in pkcs12 (Chiave pubblica e privata in un unico file)
 
-    openssl pkcs12 -export -in certs/name-cert.pem -inkey private/name-key.pem -out name.p12
+    openssl pkcs12 -export -in certs/name-cert.pem -inkey private/name-key.pem -out pkcs12/name.p12
 
 
 Script per i tre comandi assieme
@@ -142,8 +142,6 @@ oppure
     SSLEngine On
     SSLCertificateFile /etc/apache2/ssl/name-cert.pem
     SSLCertificateKeyFile /etc/apache2/ssl/name-key.pem
-
-
 
 
 #IIS
