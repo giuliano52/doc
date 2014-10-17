@@ -14,4 +14,8 @@ per fare una copia di sucurezza di un DVD su HD
     vobcopy -m ~/mnt/tmp/
  
 
+#Mp3
 
+Rimuovere il tag v1 (uso il programma _eye3D)
+
+    find ./ -iname "*.mp3" -exec eyeD3 --remove-v1  {} \;
