@@ -16,6 +16,6 @@ per fare una copia di sucurezza di un DVD su HD
 
 #Mp3
 
-Rimuovere il tag v1 (uso il programma _eye3D)
+Rimuovere il tag v1 (uso il programma _eye3D_)
 
     find ./ -iname "*.mp3" -exec eyeD3 --remove-v1  {} \;
