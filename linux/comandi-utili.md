@@ -73,6 +73,13 @@ Trova e cancella le directory vuote
 
     find . -type d -empty -exec rmdir {} \;
     
+#Sicurezza
+
+Comando                             | Effetto
+------------------------------------| ------------------------------------
+last -i     				        | mostra il last con l'IP al posto del nome
+lastlog                             | mostre l'utlimo login degli utetni su un sistema
+
 #Altri Comandi
 
 Comando                             | Effetto
