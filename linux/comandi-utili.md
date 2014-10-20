@@ -13,6 +13,8 @@ sed 's/[^[:print:]]/#/g' input.log > output.txt 		| Rimuove tutti i caratteri no
 sort in.txt > output.txt                       			| Ordina un file di testo
 cat file1.txt file2.txt file\*.txt > output.txt  		| unire più files di testo in uno solo
 rsync -avh --progress Sorgente  Dir_Destinazione        | Copia un file o directory mostrando  la una progress bar
+diff -e file.old file.new > diff1.txt                   | salva il diff di due file in formato ed 
+(cat diff1.txt diff2.txt ... && echo w) | ed - file.old | usa il file diff.txt per modificare il file.old
 
 
 # Filesystem
