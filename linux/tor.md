@@ -40,6 +40,7 @@ Proxy locale
 	cd /etc/polipo; cp config.sample config
 	
 modificare  /etc/polipo/config modificando
+```
 # Uncomment this if you want to use a parent SOCKS proxy:
  socksParentProxy = "localhost:9050"
  socksProxyType = socks5
@@ -51,6 +52,7 @@ proxyAddress = "0.0.0.0"    # IPv4 only
 # allowedClients = 127.0.0.1, 192.168.42.0/24
                                           
 allowedClients = 127.0.0.1, 10.20.20.30
+```
 
 /etc/init.d/polipo restart
  systemctl enable polipo.service
