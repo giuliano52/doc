@@ -66,3 +66,6 @@ The above command will copy over the audio as is. Convert the audio to AAC by re
 
     ffmpeg -i input.ogg -acodec libmp3lame -q:a 2 output.mp3
 
+Converte tutte i file .wma di una cartella in formato mp3 -q:a 2 imposta il bitrate (circa 180 kbits/s)
+
+    for file in *.wma; do `ffmpeg -i "$file" -q:a 2 "$file.mp3"`;done
