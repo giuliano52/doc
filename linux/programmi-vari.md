@@ -3,6 +3,26 @@ title: Programmi Vari
 author: Giuliano Dedda 
 date: 17/07/2014
 ---
+#corkscrew
+
+    pacman -S corkscrew
+   
+Configue corkscrew
+
+    touch .corkscrew-auth
+    nano .corkscrew-auth
+    username:password
+    
+Configure ssh For Tunneling
+
+    vim /home/yourusername/.ssh/config
+    Host *
+    ProxyCommand corkscrew proxyhostname proxyport %h %p /home/username/.corkscrew-auth
+
+Test your SSH connection
+
+    ssh serverip
+
 
 #Pandoc
 Serve per convertire formati di file (es da html a epub, ... )
