@@ -39,16 +39,12 @@ correggo all'interno del latex gli includegraphics
     cd latex
     ~/public_html/pyhub/varie/from_epub_to_latex/correct_latex.py global.tex
 
-Ora si può iniziare a correggere manualemnte:
+Ora si puÃ² iniziare a correggere manualemnte:
 
 - Eliminare i doppi \n 
 - eliminare le immagini doppie
 
-    
-    
 
-
-    pandoc input.epub -o outpout.tex
 
 #Creazione da Latex
 
