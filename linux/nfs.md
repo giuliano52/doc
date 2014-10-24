@@ -39,3 +39,7 @@ su fstab
 
     #NAS auto
     nfs_server:/mnt/HD/HD_a2 /mnt/nas nfs rw,hard,intr,nolock,user 0 0
+ 
+#Permessi
+
+devono essere messi sul server (non è possibile ad esempio modificare l'owner di una cartella da root del client)
