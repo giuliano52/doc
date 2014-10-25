@@ -15,6 +15,10 @@ e si sceglie il greeater con:
 
     greeter-session=lightdm-gtk-greeter
 
+per testartlo (ma non mi ha funzionato) 
+
+    lightdm --test-mode --debug
+
 abilitazione lightdm
 
     systemctl enable lightdm
