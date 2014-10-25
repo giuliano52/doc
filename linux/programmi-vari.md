@@ -79,6 +79,10 @@ systemctl -t service -a 	 | mostra i servizi al boot
 
 Il servizio per la risoluzione dei nomi si chiama _systemd-resolved.service_ e genera il file /run/systemd/resolve/resolv.conf che viene linkato a /etc/resolv.conf
 
+##cose da verificare
+in /usr/lib/systemd/system/ ci dovrebbero essere i servizi disponibili
+in /etc/systemd/system quelli abilitati ?
+
 #Webdav
 
 ##davfs2
