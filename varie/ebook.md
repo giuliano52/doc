@@ -50,8 +50,11 @@ si può creare un file .gitignore in questo modo:
 ```
 *.aux
 *.out
+*.log
+*.toc
 latex/*.pdf
 bk/*
+
 ```
 
 #Creazione da Latex
