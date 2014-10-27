@@ -44,7 +44,15 @@ Ora si può iniziare a correggere manualemnte:
 - Eliminare i doppi \n 
 - eliminare le immagini doppie
 
+##versioning con git
 
+si può creare un file .gitignore in questo modo:
+```
+*.aux
+*.out
+latex/*.pdf
+bk/*
+```
 
 #Creazione da Latex
 
