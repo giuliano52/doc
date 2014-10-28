@@ -10,6 +10,8 @@ Comando                                               	| Effetto
 --------------------------------------------------------| --------------------------------------------------------
 sed -i 's/orig/dst/' file.txt 			                | Sostituisce il testo orig con dst nel file.txt
 sed 's/[^[:print:]]/#/g' input.log > output.txt 		| Rimuove tutti i caratteri non stampabili 
+sed -i  "s/<\(.\)>/(\1)/g"  filename                    | sostituisce le parentesi (lasciando il contenuto)
+sed -i "s/\xE2\x80\x93/-/g" filename                    | sostiuisce stringhe unicode
 sort in.txt > output.txt                       			| Ordina un file di testo
 cat file1.txt file2.txt file\*.txt > output.txt  		| unire più files di testo in uno solo
 rsync -avh --progress Sorgente  Dir_Destinazione        | Copia un file o directory mostrando  la una progress bar
