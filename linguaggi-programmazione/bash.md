@@ -4,6 +4,15 @@ author: Giuliano Dedda
 date: 10/07/2014
 ---
 
+#Operazioni su files
+
+##estrae l'estensione e il filename
+```
+filename=$(basename "$fullfile")
+extension="${filename##*.}"
+filename="${filename%.*}"
+```
+
 #Esempi
 
 
