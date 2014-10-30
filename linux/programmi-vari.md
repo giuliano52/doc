@@ -75,6 +75,7 @@ comando per la documentazione
 Comando                          | Effetto
 ----------------------------     | ----------------------------
 journalctl -b 			 | messagi dal boot
+journalctl --no-pager		 | messaggi senza visualizzazione a pagine
 systemctl -t service -a 	 | mostra i servizi al boot
 
 Il servizio per la risoluzione dei nomi si chiama _systemd-resolved.service_ e genera il file /run/systemd/resolve/resolv.conf che viene linkato a /etc/resolv.conf
