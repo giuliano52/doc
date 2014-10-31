@@ -26,11 +26,6 @@ abilitazione lightdm
 ##SDDM
 la configurazione si può generare con il comando 
 
-#Accesso remoto
-##x2go
-
-
-
     sddm --example-config  > /etc/sddm.conf
     
 poi le altre impostazioni sono nei file dei temi (di default /usr/share/sddm/themes) 
@@ -40,3 +35,5 @@ per provare i vari temi usare il comando:
 
     sddm-greeter --test-mode --theme /usr/share/sddm/themes/elarun/
 
+#Accesso remoto
+##x2go
