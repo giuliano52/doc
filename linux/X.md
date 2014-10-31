@@ -31,3 +31,7 @@ la configurazione si può generare con il comando
 poi le altre impostazioni sono nei file dei temi (di default /usr/share/sddm/themes) 
 le facce si devono mettere in /usr/share/sddm/faces 
 
+per provare i vari temi usare il comando:
+
+    sddm-greeter --test-mode --theme /usr/share/sddm/themes/elarun/
+
