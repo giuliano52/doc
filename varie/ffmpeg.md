@@ -70,6 +70,15 @@ Converte tutte i file .wma di una cartella in formato mp3 -q:a 2 imposta il bitr
 
     for file in *.wma; do `ffmpeg -i "$file" -q:a 2 "$file.mp3"`;done
 
+oppure
+
+    #!/bin/sh
+    for x in "${@}"
+    do
+       FILE=${x}
+       ffmpeg -i "$FILE" -vcodec copy -acodec libmp3lame -ab 128k  "avi/$FILE"
+    done
+
 #FLAC
 
     for file in *.wav; do `ffmpeg -i "$file" "$file.flac"`;done
