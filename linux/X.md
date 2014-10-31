@@ -28,6 +28,6 @@ la configurazione si può generare con il comando
 
     sddm --example-config  > /etc/sddm.conf
     
-poi le altre impostazioni sono nei file dei temi (di default /usr/share/sddm/themes) \\
+poi le altre impostazioni sono nei file dei temi (di default /usr/share/sddm/themes) //
 le 
 
