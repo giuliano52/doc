@@ -37,3 +37,8 @@ per provare i vari temi usare il comando:
 
 #Accesso remoto
 ##x2go
+sul client: intallare _x2goclient_
+
+sul server installare x2goserver e lanciare il comando:
+
+    sudo x2godbadmin --createdb
