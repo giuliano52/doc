@@ -168,11 +168,12 @@ rankmirrors -n 6 /etc/pacman.d/mirrorlist.backup > /etc/pacman.d/mirrorlist
 
 ##Pacman
 
-Opzione 		| Descrizione 						| Esempio
-------- 		| ------- 							| ------- 
--S <pacchetto>	| Installa un pacchetto | 
- -Syu			| aggiorna database e pacchetti |
- -Q				| queri sui pacchetti installati |
+Opzione 	| Descrizione 				| Esempio
+------- 	| ------- 				| ------- 
+-S <pacchetto>	| Installa un pacchetto 		|
+ -Syu		| aggiorna database e pacchetti 	|
+ -Q		| queri sui pacchetti installati	|
+ -Qdt		| trova gli le dipendenze orfani	| pacman -Rsn $(pacman -Qdtq) # rimuove  gli orfani
 
 Visualizza la lista dei pacchetti ordinati per dimensione
 
