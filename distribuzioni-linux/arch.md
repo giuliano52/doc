@@ -73,6 +73,21 @@ exit
 reboot
 ```
 
+# Time setup
+
+lanciare il comando per far partire sntp
+
+    sudo  timedatectl set-ntp true 
+
+e configurare il  /etc/systemd/timesyncd.conf
+
+con 
+```
+[Time]
+NTP=ntp2.inrim.it ntp1.inrim.it
+FallbackNTP=0.pool.ntp.org 1.pool.ntp.org 0.fr.pool.ntp.org
+```
+
 # Post configuration
 
 ```
