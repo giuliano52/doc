@@ -6,7 +6,7 @@ date: 22/08/2014
 
 #Operazioni su files
 
-*sed* può avere problemi con l'escape dei caratteri (specialmente il \) per eliminare questi problemi 
+*sed* può avere problemi con l'escape dei caratteri (specialmente il \\) per eliminare questi problemi 
 fare un file esterno con i comandi sed per ogni linea (ed eventualmente con #) e lanciarlo con
 
     sed -i -f nomefile.sed
