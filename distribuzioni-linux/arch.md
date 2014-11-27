@@ -194,4 +194,11 @@ Visualizza la lista dei pacchetti ordinati per dimensione
 
     pacsysclean	
 
+##PKGBUILD
+se bisogna utilizzare un repository github con https (invece che con git) a causa ad esempio di problemi con
+il proxy inserire nel campo source il valre: git+https:
+es: 
+
+     source=('git+https://github.com/coolwanglu/pdf2htmlEX.git')
+     
 
