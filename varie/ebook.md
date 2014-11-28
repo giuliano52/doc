@@ -1,4 +1,5 @@
 #da PDF a HTML
+##pdftohtml
 se si usa il comndao _pdftohtml_ inserire nell'header del file il campo:
 
     <meta charset="UTF-8">
@@ -8,6 +9,9 @@ Inoltre si possono sostituire i _&#160;_ con spazio vuoti
 
     sed -i "s/&#160;/ /g" nomefile.html
 
+##pdf2htmlEX
+ripropone il pdf sul browser con la stessa impaginazione (in pratica rimane la divisione a pagine), 
+ma il risultato è praticamente identico all'originale. Fa molto uso di javascript e css
 
 #Creazione Latex da PDF
 
