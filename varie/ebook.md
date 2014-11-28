@@ -1,17 +1,21 @@
 #da PDF a HTML
 ##pdftohtml
-se si usa il comndao _pdftohtml_ inserire nell'header del file il campo:
+il file con il contenuto avrà la s finale nel nome file (nomefiles.html)
+se si usa il comndao _pdftohtml_ inserire nell'header del file nomefiles.html il campo:
 
     <meta charset="UTF-8">
 
 per correggere le lettere accentate. 
-Inoltre si possono sostituire i _&#160;_ con spazio vuoti
+Inoltre si possono sostituire i _&#160;_ con spazio vuoti 
 
-    sed -i "s/&#160;/ /g" nomefile.html
+    sed -i "s/&#160;/ /g" nomefiles.html
 
 ##pdf2htmlEX
 ripropone il pdf sul browser con la stessa impaginazione (in pratica rimane la divisione a pagine), 
 ma il risultato è praticamente identico all'originale. Fa molto uso di javascript e css
+
+##Calibre
+da verificare
 
 #Creazione Latex da PDF
 
