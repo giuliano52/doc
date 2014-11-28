@@ -1,3 +1,13 @@
+#da PDF a HTML
+se si usa il comndao _pdftohtml_ inserire nell'header del file il campo:
+
+    <meta charset="UTF-8">
+
+per correggere le lettere accentate. 
+Inoltre si possono sostituire i _&#160;_ con spazio vuoti
+
+    sed -i "s/&#160;/ /g" nomefile.html
+
 
 #Creazione Latex da PDF
 
