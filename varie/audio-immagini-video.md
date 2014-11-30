@@ -13,7 +13,7 @@ per fare una copia di sucurezza di un DVD su HD
     sudo mount -n /dev/sr0 ~/mnt/tmp/
     vobcopy -m ~/mnt/tmp/
 
-oppure con 
+se vobcopy si blocca si può crere l'iso con ddrescue e poi lanciare vobcopy sull'iso 
 
     ddrescue /dev/sr0 out.iso
  
