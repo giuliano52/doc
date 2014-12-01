@@ -40,8 +40,8 @@ indizi:
 
 ##8. La caduta dei gravi
 Storicamente a Galileo viene attibuito il merito di aver compreso la legge del moto accellerato dei gravi 
-in caduta libera, tuttavia esistono delle citazioni di __Filopono__ su Aristoele, che indicano già
-che questa legge potesse essere note, inoltre anche __Lucrezio__ nel _de rerum nature_ cita questo fatto. 
+in caduta libera, tuttavia esistono delle citazioni di __Filopono__ (commentatore bizantino) su Aristoele,
+che indicano già che questa legge potesse essere note, inoltre anche __Lucrezio__ nel _de rerum nature_ cita questo fatto. 
 Si sapeva che il moto era accellerato, es  un oggetto fa più rumore se cade da più in alto o il flusso 
 d'acqua si assotiglia dall'alto in basso. 
 
