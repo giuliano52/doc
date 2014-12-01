@@ -16,6 +16,7 @@ per fare una copia di sucurezza di un DVD su HD
 se vobcopy si blocca si può crere l'iso con ddrescue e poi lanciare vobcopy sull'iso 
 
     ddrescue /dev/sr0 out.iso
+    vobcopy -l out.iso
  
 
 #Mp3
