@@ -15,7 +15,9 @@ ripropone il pdf sul browser con la stessa impaginazione (in pratica rimane la d
 ma il risultato è praticamente identico all'originale. Fa molto uso di javascript e css
 
 ##Calibre
-da verificare
+da linea di comando
+
+    ebook-convert myfile.input_format myfile.output_format 
 
 #Creazione Latex da PDF
 
