@@ -35,6 +35,11 @@ per provare i vari temi usare il comando:
 
     sddm-greeter --test-mode --theme /usr/share/sddm/themes/elarun/
 
+#XDG
+per ripristinare il default file manager usare il seguente comando:
+
+    xdg-mime default Thunar.desktop inode/directory
+
 #Accesso remoto
 ##x2go
 sul client: intallare _x2goclient_
