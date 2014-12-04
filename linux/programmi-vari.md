@@ -76,6 +76,16 @@ comando per la documentazione
 
     pandoc  input.md -s  -o output.pdf  -V geometry:"top=1cm, bottom=1.5cm, left=1cm, right=1cm"	
 
+##errori 
+se fornisce come errore: 
+  
+    Stack space overflow: current size
+    
+lanciare con le opzioni: +RTS -K64m -RTS  es:
+
+    pandoc -t markdown d1.tex -o d1.txt +RTS -K64m -RTS
+
+
 #Systemd
 
 Comando                          | Effetto
