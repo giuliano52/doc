@@ -1,7 +1,7 @@
 ---
 title: Comandi Utili
 author: Giuliano Dedda 
-date: 22/08/2014
+date: 16/12/2014
 ---
 
 #Operazioni su files
@@ -34,6 +34,7 @@ lsof											  		| mostra i files aperti
 parted											  		| serve per ridimensionare le partizioni
 mmls												  	| Gestisce i dischi creati con dd
 fdupes -r ./										  	| Trova i files duplicati in una directory
+tune2fs -m 0 /dev/sdb1                                  | mette a 0% lo spazio riservato a root
 
 # Stato sistema
 Comando                             | Effetto
