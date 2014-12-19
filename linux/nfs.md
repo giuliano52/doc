@@ -19,6 +19,8 @@ es:
 su arch : 
 
     sudo pacman -S nfs-utils
+    
+    (forse i seguenti non servono)
     sudo systemctl start rpcbind.service
     sudo systemctl start nfs-client.target
 
