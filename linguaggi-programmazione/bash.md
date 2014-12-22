@@ -19,7 +19,6 @@ filename="${filename%.*}"
 ##Ciclo For
 
 ```bash
-#!/bin/bash
 for i in `seq 1 10`;
 do
         echo $i
@@ -35,12 +34,12 @@ done
 ```
 
 o in una sola riga
-```   
+```bash   
 for f in dir_to_scan/* ; do echo $f ; done
 ```
 
 Elementi di un array: 
-```
+```bash
 array=( one two three )
 for i in "${array[@]}"
 do
@@ -49,8 +48,7 @@ done
 ```
 
 Elementi in un file
-```
-#/bin/sh
+```bash
 for i in $(cat host.txt) 
 do
 	echo $i
@@ -60,7 +58,6 @@ done
 ##WalkTree
 Mostra ricorsivamente le directory
 ```bash
-#!/bin/sh
 for i in `find $1 -iname '*.svg' -type f `
 do
     echo "$i"
