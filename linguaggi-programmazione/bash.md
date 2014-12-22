@@ -48,7 +48,14 @@ do
 done
 ```
 
-
+Elementi in un file
+```
+#/bin/sh
+for i in $(cat host.txt) 
+do
+	echo $i
+done
+```
 
 ##WalkTree
 Mostra ricorsivamente le directory
