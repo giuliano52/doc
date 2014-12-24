@@ -63,11 +63,13 @@ usermod -aG sudo pino                   | Aggiunge il gruppo sudo all'utente _pi
 
 #Comando Find
 
-Esegue una funzione dopo il find   
+Esegue una funzione dopo il find   (il comando execdir esegue il comando all'interno della directory del file)
 
     find ./ -name '*.pdf' -exec ls -la {} \;     
     find ./ -name '*.c' -exec grep ciao {} \;
     find ./ -name '*.pdf' -exec rm -f {} \;
+    find ./ -name *.rar -execdir unrar e  {} \;     # estrae tutti i rar nei subfolder
+    
 
 copia una directory completamente in un altra   
 
