@@ -1,0 +1,138 @@
+Documentazione ASCIIDOC
+=======================
+Giuliano Dedda
+v0.0.1, 2014-12-24
+:stem: latexmath
+
+In questa parte si può scrivere il preambolo, nell'header si possono 
+mettere l'autore, la versione e la data separati da una virgola
+per gli altri attributi (ce ne sono molti) vedere
+http://www.methods.co.nz/asciidoc/asciidoc.css-embedded.html#X60[Asciidoc-CSS]
+
+
+Considerazioni Generali
+-----------------------
+
+Questo file contiene degli esempi per la documentazione su _asciidoc_. 
+
+I titoli devono essere sottolineati fino a completare tutta la riga sopra.
+Altrimenti non vengono riconosciuti
+
+si possono anche usare riferimenti per l'autore: {author} e
+per la versione {revnumber} 
+
+
+Comandi Semplici
+----------------
+
+_Italico_ 	+
+*Grassetto*
+
+il + corrisponde a \n (newline) 
+
+Linguaggi di programmazione
+---------------------------
+Si può usare l'identazione
+
+	print("Ciao")
+	
+o i blocchi
+
+[source,python]
+print("Hello, Python!")
+
+[source,ruby]
+.app.rb
+----
+require 'sinatra'
+
+get '/hi' do
+  "Hello World!"
+end
+----
+
+Tabelle
+-------
+
+.Tabella Semplice
+|==================
+|a1|a2|a3
+|b1|b2|b3
+|c1|c2|c3
+|==================
+
+.Tabella più complessa
+[width="80%",cols="3,^2,^2,10",options="header"]
+|=========================================================
+|Date |Duration |Avg HR |Notes
+
+|22-Aug-08 |10:24 | 157 |
+Worked out MSHR (max sustainable heart rate) by going hard
+for this interval.
+
+|22-Aug-08 |23:03 | 152 |
+Back-to-back with previous interval.
+
+|24-Aug-08 |40:00 | 145 |
+Moderately hard interspersed with 3x 3min intervals (2min
+hard + 1min really hard taking the HR up to 160).
+
+|=========================================================
+
+Immagini
+--------
+image::img/img1.jpg[Alt text]
+
+Matematica
+----------
+Per asciidoctor (non asciidoc) inserire negli header la dicitura:
++:stem: latexmath+
+
+Equazione in line
+$\frac{\sin{\omega t}}{2\pi}$
+
+Equazione non in line con parentesi quadre 
+\[
+\frac{\sin{\omega t}}{2\pi}
+\]
+
+Equazione con parentesi tonde 
+\(
+\frac{\sin{\omega t}}{2\pi}
+\)
+per le equazioni in line
+
+Latexmath
+latexmath:[\sum_{n=1}^\infty \frac{1}{2^n}]
+
+Steam
+stem:[\sum_{n=1}^\infty \frac{1}{2^n}]
+
+Output
+------
+
+per generare l'html
+	asciidoctor doc.adoc
+o
+	asciidoc -o doc-asciidoc.html doc.adoc
+
+Epub
+~~~~
+c'è un bug che impone di fare un file che abbia gli header e che contenga un include 
+ad un altro file (vedi doc-epub.adoc)
+e poi lanciare (la parte matematica non viene)
+
+	./asciidoctor-epub3 ../../doc-epub.adoc
+	
+
+Pandoc
+------
+2014-12-24: Non funziona bene, le tabelle non vengono create, e la matematica non viene fatta bene
+
+
+
+
+ 
+
+ 
+
