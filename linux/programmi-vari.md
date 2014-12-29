@@ -24,8 +24,6 @@ Test your SSH connection
     ssh serverip
 
 
-
-
 #Systemd
 
 Comando                          | Effetto
