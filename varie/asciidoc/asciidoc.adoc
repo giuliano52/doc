@@ -125,7 +125,14 @@ e poi lanciare (la parte matematica non viene)
 
 	./asciidoctor-epub3 ../../doc-epub.adoc
 	
+PDF
+~~~
+installare asciidoctor-pdf e lanciare il comando
 
+	./asciidoctor-pdf nome-file.adoc
+
+Il PDF viene bene con l'eccezione della matematica. 
+	
 Pandoc
 ------
 2014-12-24: Non funziona bene, le tabelle non vengono create, e la matematica non viene fatta bene
