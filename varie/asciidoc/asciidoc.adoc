@@ -96,6 +96,12 @@ Equazione non in line con parentesi quadre
 \frac{\sin{\omega t}}{2\pi}
 \]
 
+\[
+\label{3:11}
+\frac{\sin{\omega t}}{2\pi}
+\]
+
+
 Equazione con parentesi tonde 
 \(
 \frac{\sin{\omega t}}{2\pi}
