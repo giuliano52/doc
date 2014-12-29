@@ -83,7 +83,7 @@ Immagini
 --------
 image::img/img1.jpg[Alt text]
 
-Matematica
+Matematica (solo asciidoctor)
 ----------
 Per asciidoctor (non asciidoc) inserire negli header la dicitura:
 +:stem: latexmath+
@@ -93,11 +93,6 @@ $\frac{\sin{\omega t}}{2\pi}$
 
 Equazione non in line con parentesi quadre 
 \[
-\frac{\sin{\omega t}}{2\pi}
-\]
-
-\[
-\label{3:11}
 \frac{\sin{\omega t}}{2\pi}
 \]
 
