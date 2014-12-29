@@ -1,7 +1,7 @@
 Documentazione ASCIIDOC
 =======================
 Giuliano Dedda
-v0.0.1, 2014-12-24
+v0.0.2, 2014-12-29
 :stem: latexmath
 
 In questa parte si può scrivere il preambolo, nell'header si possono 
@@ -88,7 +88,7 @@ Matematica
 Per asciidoctor (non asciidoc) inserire negli header la dicitura:
 +:stem: latexmath+
 
-Equazione in line
+Equazione in line (con il dollaro $ non funziona nemmeno con asciidoctor) 
 $\frac{\sin{\omega t}}{2\pi}$
 
 Equazione non in line con parentesi quadre 
@@ -129,6 +129,9 @@ Pandoc
 ------
 2014-12-24: Non funziona bene, le tabelle non vengono create, e la matematica non viene fatta bene
 
+GitHub
+------
+Accetta la documentazione in asciidoc, e aparte la matematica il resto viene gestito bene
 
 
 
