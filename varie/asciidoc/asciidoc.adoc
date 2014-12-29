@@ -84,7 +84,7 @@ Immagini
 image::img/img1.jpg[Alt text]
 
 Matematica (solo asciidoctor)
-----------
+-----------------------------
 Per asciidoctor (non asciidoc) inserire negli header la dicitura:
 +:stem: latexmath+
 
