@@ -51,6 +51,14 @@ get '/hi' do
 end
 ----
 
+codice inline con ` (apice rovescio) 
+`print("hello")`
+
+o blocchi di codice con 3 ` 
+```
+print("hello")
+```
+
 Tabelle
 -------
 
