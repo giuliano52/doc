@@ -147,11 +147,8 @@ Pandoc
 
 GitHub
 ------
-Accetta la documentazione in asciidoc, e aparte la matematica il resto viene gestito bene
+Accetta la documentazione in asciidoc, e a parte la matematica il resto viene gestito bene
 
 
 
- 
-
- 
 
