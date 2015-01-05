@@ -96,8 +96,11 @@ Matematica (solo asciidoctor)
 Per asciidoctor (non asciidoc) inserire negli header la dicitura:
 +:stem: latexmath+
 
-Equazione in line (con il dollaro $ non funziona nemmeno con asciidoctor) 
+Equazione in line (con il dollaro $ ) 
 $\frac{\sin{\omega t}}{2\pi}$
+per farlo funzionare ho usato la libreria asciidoctor-latex : 
+
+	asciidoctor -r asciidoctor-latex -a stem=latexmath asciidoc.adoc
 
 Equazione non in line con parentesi quadre 
 \[
