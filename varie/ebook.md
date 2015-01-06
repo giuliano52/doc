@@ -96,3 +96,5 @@ poi con _Sigil_ rimettere a posto l'indice
 - Calibre | ripristina database
 - Controllare gli errori (e valutare i singoli libri)
 -- ci possono essere due epub nella dir (nel qual caso eliminarne uno e ripristinare nuovamente la bilioteca)
+-- ricopiare in heap i libri che vanno bene
+-- aggiungere i libri che mancano con l'operazione: (aggiungi-libri con sottocartelle più versioni nella stessa cartella)
