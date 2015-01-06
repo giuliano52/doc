@@ -85,3 +85,13 @@ convertire con tex2ebook.py es:
 
 poi con _Sigil_ rimettere a posto l'indice
     
+# Calibre
+
+## Eliminare archivi RAR o ZIP
+
+- copiare in due bilioteche diverse (es tmp e da sistemare)
+- cd tmp
+- find ./ -name *.rar -execdir unrar e  {} \;
+- find ./ -name *.rar -execdir rm  {} \;
+- Calibre | ripristina database
+- Controllare gli errori (e valutare i singoli libri)
