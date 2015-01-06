@@ -95,3 +95,4 @@ poi con _Sigil_ rimettere a posto l'indice
 - find ./ -name *.rar -execdir rm  {} \;
 - Calibre | ripristina database
 - Controllare gli errori (e valutare i singoli libri)
+-- ci possono essere due epub nella dir (nel qual caso eliminarne uno e ripristinare nuovamente la bilioteca)
