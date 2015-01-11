@@ -1,12 +1,12 @@
 Pandoc
-===
+======
 title: Programmi Vari
 author: Giuliano Dedda 
 date: 29/12/2014
 
 #Pandoc
 Serve per convertire formati di file (es da html a epub, ... )
-20140709 per installartlo su ARCH meglio non usare AUR ma impostare il repository: come spiegato qui: http://gnuhacks.com/blog/how-to-install-pandoc-on-arch-linux/
+20140709 per installartlo su ARCH meglio non usare AUR ma impostare il repository,
 in partica in _/etc/pacman.con_ inserire le seguenti righe:
 
 
