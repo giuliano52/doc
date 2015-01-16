@@ -111,9 +111,9 @@ testo = testo.replace('S', '6')							| sostituzione di caratteri all'interno di
 per confrontare la parte iniziale di una stringa si può usare:
 ```python
 str = "this is string example....wow!!!";
-print str.startswith( 'this' );
-print str.startswith( 'is', 2, 4 );
-print str.startswith( 'this', 2, 4 );
+print(str.startswith( 'this' ))
+print(str.startswith( 'is', 2, 4 ))
+print(str.startswith( 'this', 2, 4 ))
 ```
 
 il risultatò sarà: True,True,False
