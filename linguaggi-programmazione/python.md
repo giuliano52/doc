@@ -108,6 +108,12 @@ print "Users connected: %d" % (userCount, )				| Inserire un intero in una strin
 stringa = format(int(data_video[1]), '02d')				| per formattare gli interi con gli zero davanti (leading zero)
 testo = testo.replace('S', '6')							| sostituzione di caratteri all'interno di una stringa
 
+per confrontare la parte iniziale di una stringa si può usare:
+```python
+linea = "ciao come va?"
+if linea.startswith('ciao' ):
+	print(linea)
+```
 
 #Espressioni regolari
 ```python
