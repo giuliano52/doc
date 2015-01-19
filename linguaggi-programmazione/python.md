@@ -101,12 +101,16 @@ Per concatenare stringhe sui usa il '+'
 per convertire da binarie a stringe usare:
 
     linea_str = str( linea_binaria, encoding='utf8' )
+ 
+per vedere se una stringa non è contenuta in un altra
+
+    if "blah" not in somestring: continue
 
 Comando                                             	| Effetto
 --------------------------------------------------------|--------------------------------------------------------
-print "Users connected: %d" % (userCount, )				| Inserire un intero in una stringa
-stringa = format(int(data_video[1]), '02d')				| per formattare gli interi con gli zero davanti (leading zero)
-testo = testo.replace('S', '6')							| sostituzione di caratteri all'interno di una stringa
+print "Users connected: %d" % (userCount, )		| Inserire un intero in una stringa
+stringa = format(int(data_video[1]), '02d')		| per formattare gli interi con gli zero davanti (leading zero)
+testo = testo.replace('S', '6')				| sostituzione di caratteri all'interno di una stringa
 
 per confrontare la parte iniziale di una stringa si può usare _startswith_:
 ```python
