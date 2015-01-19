@@ -127,6 +127,7 @@ il risultatò sarà: True,True,False
 rappresentazione unicode:
 
     '☃' == '\u2603' == '\U00002603' == '\N{SNOWMAN}'
+
 per rappresentare i byte
 
     bytestring = b"Byte string in Python3"
@@ -134,7 +135,15 @@ per rappresentare i byte
 per sapere che tipo di stringa stiamo lavorando:
 
     type(stringa)
-    
+
+Encoding:        Unicode → Bytes
+
+    bytestr = unistr.encode('utf-8')
+
+Decoding:        Bytes → Unicode
+
+    unistr = bytestr.decode('utf-8')
+
 conversione in ascii
 ```python
 >>> snowman = 'Snowman: ☃' # Python 3
@@ -154,7 +163,13 @@ b'Snowman: \\u2603'
 b'Snowman: \xe2\x98\x83'
 ```
 
-per convertire da byte a unicode
+
+per i file:
+
+    open('file.txt', 'rb') → Bytes
+    open('file.txt', 'rt') → Unicode
+    codecs.open() no longer needed
+
 
 
 
