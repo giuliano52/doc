@@ -122,6 +122,42 @@ print(str.startswith( 'this', 2, 4 ))
 
 il risultatò sarà: True,True,False
 
+## Unicode
+
+rappresentazione unicode:
+
+    '☃' == '\u2603' == '\U00002603' == '\N{SNOWMAN}'
+per rappresentare i byte
+
+    bytestring = b"Byte string in Python3"
+
+per sapere che tipo di stringa stiamo lavorando:
+
+    type(stringa)
+    
+conversione in ascii
+```python
+>>> snowman = 'Snowman: ☃' # Python 3
+>>> snowman.encode('ascii', 'strict') # default
+UnicodeEncodeError: 'ascii' codec can't encode character 
+  '\u2603' in position 9: ordinal not in range(128)
+>>> snowman.encode('ascii', 'replace')
+b'Snowman: ?'
+>>> snowman.encode('ascii', 'ignore')
+b'Snowman: '
+>>> snowman.encode('ascii', 'xmlcharrefreplace')
+b'Snowman: &#9731;'
+>>> snowman.encode('ascii', 'backslashreplace')
+b'Snowman: \\u2603'
+
+>>> snowman.encode('utf-8')
+b'Snowman: \xe2\x98\x83'
+```
+
+per convertire da byte a unicode
+
+
+
 #Espressioni regolari
 ```python
 import sys
