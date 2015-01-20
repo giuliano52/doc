@@ -136,6 +136,10 @@ e poi lanciare (la parte matematica non viene)
 
 	./asciidoctor-epub3 ../../doc-epub.adoc
 	
+oppure
+
+	a2x -fepub -dbook indice.adoc
+	
 PDF
 ~~~
 installare asciidoctor-pdf e lanciare il comando
