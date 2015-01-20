@@ -138,7 +138,7 @@ e poi lanciare (la parte matematica non viene)
 	
 oppure
 
-	a2x -fepub -dbook indice.adoc
+	a2x -fepub --no-xmllint -dbook indice.adoc
 	
 PDF
 ~~~
