@@ -13,6 +13,18 @@ extension="${filename##*.}"
 filename="${filename%.*}"
 ```
 
+#Domanda are you sure?
+
+```bash
+read -p "Are you sure ? [Y/N] ? " -n 1 -r
+echo    # (optional) move to a new line
+if [[ ! $REPLY =~ ^[Yy]$ ]]
+then
+    # se non si preme Y il programma termina
+    exit 1
+fi
+```
+
 #Esempi
 
 
