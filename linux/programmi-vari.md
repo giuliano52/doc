@@ -59,6 +59,10 @@ per montare un disco remoto con l'utente_a inserire in /etc/fstab
 
     https://dav.box.com/dav /home/utente_a/mnt/box.com    davfs   defaults,uid=utente_a,gid=gruppo_a,noauto  0       0
     
-    
+#OCR - tesseract
+
+installare anche community/tesseract-data-ita
+
+
 
 
