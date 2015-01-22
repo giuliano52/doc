@@ -63,6 +63,10 @@ per montare un disco remoto con l'utente_a inserire in /etc/fstab
 
 installare anche community/tesseract-data-ita
 
+tesseract converte solo da tif pertanto bisogna convertire i file prima:
+su : http://wiki.ubuntu-it.org/Grafica/Ocr c'è una buona guida e un programma per converitire un PDF con più pagine.
+
+
 
 
 
