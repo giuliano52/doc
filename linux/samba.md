@@ -45,8 +45,16 @@ per abitilitare i servizi (con systemd)
 accedere poi da Windows con  
 
     \\server-samba\username
-  
+ 
+se ci sono problemi di refresh (testato su windows 7)
+Only had to add this registry key:
+
+    DirectoryCacheLifetime[DWORD] = 0
+    HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Lanmanworkstation\Parameters
+
 #Winbind
 
     ntlm_auth –username=test01	| per verificare le credenziali dell'utente
     wbinfo -n test01			| per trovare il sid di un utente
+    
+ 
