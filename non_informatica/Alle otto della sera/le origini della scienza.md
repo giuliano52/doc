@@ -52,3 +52,11 @@ Ci sono rimaste le sue opere e questo permette di studiarlo direttamente.
 Archimede è noto per il principio di archimede , (in realtà il vero principio è che una zona di fluido è sottoposta alla pressione della colonna di fluido che ha sopra di se. ) 
 Grazie a questo principio ne segue la legge di archimede, e che la terra dato che è sferica un tempo doveva essere fluida.
 Inoltre Archimede ha studiato molto il galleggiamento dei solidi in quanto hanno come applicazione pratica il galleggiamento delle navi.
+
+#16. Catapulte ed armi da guerra
+
+#17. Chimica
+Prima del era moderna la chimica era associata a qualcosa di magico e veniva chiamata _alchimia_. Tuttavia
+l'introduzione della componente magica è solo in epoca tarda ellenistica, in quanto prima i trattati parlano di questa
+scienza il cui scopo principale era la modifica dei colori che non era assolutamente magica.
+Esistono concetti primitivi di molecole, e di acido. 
