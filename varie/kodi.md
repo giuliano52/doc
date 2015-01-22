@@ -1,4 +1,4 @@
-#xbmc
+#kodi
 
 ##Film
 Formato nome film per essere letto dal scraper (programma che scrica le informazioni sui vari film:
