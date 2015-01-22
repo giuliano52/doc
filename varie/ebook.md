@@ -98,3 +98,10 @@ poi con _Sigil_ rimettere a posto l'indice
 -- ci possono essere due epub nella dir (nel qual caso eliminarne uno e ripristinare nuovamente la bilioteca)
 -- ricopiare in heap i libri che vanno bene
 -- aggiungere i libri che mancano con l'operazione: (aggiungi-libri con sottocartelle più versioni nella stessa cartella)
+
+## Note varie
+- Il formato _.lrf_ (Sony ebook) può essere eliminato
+- Anche il formato _.pdb_ (Palm Digital Media) può essere eliminato
+- 
+
+per i vari formati vedi: http://en.wikipedia.org/wiki/Comparison_of_e-book_formats
