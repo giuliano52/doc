@@ -12,6 +12,7 @@ whoami /user  |    Fornisce il SID
 
 #X per Windows
 Scaricare Cygwin 
+instalalre anche i pacchetti: xorg-server e xhost
 
 creare: C:\\cygwin\\bin\\startmyx.bat
 ```
