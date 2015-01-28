@@ -60,3 +60,7 @@ Prima del era moderna la chimica era associata a qualcosa di magico e veniva chi
 l'introduzione della componente magica è solo in epoca tarda ellenistica, in quanto prima i trattati parlano di questa
 scienza il cui scopo principale era la modifica dei colori che non era assolutamente magica.
 Esistono concetti primitivi di molecole, e di acido. 
+
+#18. Teoria dell'evoluzione
+
+
