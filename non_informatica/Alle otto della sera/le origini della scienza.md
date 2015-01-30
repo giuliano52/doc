@@ -63,4 +63,5 @@ Esistono concetti primitivi di molecole, e di acido.
 
 #18. Teoria dell'evoluzione
 
-
+#19 Medicina
+ci sono delle testimonianze scritte che si aveva capito il ruolo dei nervi, e che si curava la cattaratta. Queste conoscenze sono state perse già dal 1° secolo D.C.
