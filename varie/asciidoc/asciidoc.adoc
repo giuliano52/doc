@@ -91,6 +91,14 @@ Immagini
 --------
 image::img/img1.jpg[Alt text]
 
+Epigrafi
+--------
+
+[quote, Blaise Pascal]
+____
+Bisogna che, in qualsiasi dialogo o discorso, si possa dire a coloro che se ne offendono: di che vi lamentate? 
+____
+
 Matematica (solo asciidoctor)
 -----------------------------
 Per asciidoctor (non asciidoc) inserire negli header la dicitura:
