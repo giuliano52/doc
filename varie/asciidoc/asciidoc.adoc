@@ -135,6 +135,12 @@ per generare l'html
 	asciidoctor doc.adoc
 o
 	asciidoc -o doc-asciidoc.html doc.adoc
+	
+usando l'output in html5, il table of content e il tema flask
+ 
+ 	asciidoc -b html5 -a icons -a toc2 -a theme=flask Matilde.adoc
+ 	
+ per cambiate l'output si può copiare il backend da /etc/asciidoc/ nella directory di lavoro 
 
 Epub
 ~~~~
