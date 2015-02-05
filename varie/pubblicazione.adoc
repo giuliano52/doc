@@ -9,8 +9,14 @@
   `pdflatex nomefile.tex`
   | buona     
   | ???
-|export epub  |
+|export epub  
+  |
+  |
+  |
 |leggibilità sorgente
+  |
+  |
+  |
 
 |===
 
