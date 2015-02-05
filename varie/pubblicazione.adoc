@@ -24,6 +24,20 @@
   |
   |
   
+|matematica
+  |ottima
+  |
+  |
+
+|export in latex
+  |n.a.
+  |
+  |
+
+|note
+  |
+  |
+  |
 |===
 
 
