@@ -6,6 +6,7 @@
 |             |latex  | asciidoc  | mediawiki
 |export pdf   
   |ottima 
+  `pdflatex nomefile.tex`
   | buona     
   | ???
 |export epub  |
