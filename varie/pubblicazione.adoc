@@ -17,9 +17,9 @@
   |
   
 |leggibilità sorgente
-  |
-  |
-  |
+  |bassa
+  |ottima
+  |ottima
   |
 
 |supporto immagini
