@@ -10,6 +10,8 @@
   | buona     
   | ???
 |export epub  |
+|leggibilità sorgente
+
 |===
 
 
