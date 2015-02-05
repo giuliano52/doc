@@ -5,7 +5,7 @@
 |===
 |             |latex  | asciidoc  | mediawiki
 |export pdf   
-  |ottima 
+  |ottima +
   `pdflatex nomefile.tex`
   | buona     
   | ???
