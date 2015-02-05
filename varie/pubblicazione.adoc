@@ -13,11 +13,17 @@
   |
   |
   |
+  
 |leggibilità sorgente
   |
   |
   |
 
+|supporto immagini
+  |solo .jpg e .png no .svg
+  |
+  |
+  
 |===
 
 
