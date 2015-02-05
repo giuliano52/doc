@@ -30,6 +30,10 @@ _Italico_ 	+
 
 il + corrisponde a \n (newline) 
 
+Header
+------
+inserire la dicitura: _:numbered:_ mette i numeri ai capitoli (off di default)
+
 Linguaggi di programmazione
 ---------------------------
 Si può usare l'identazione
