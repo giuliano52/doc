@@ -3,13 +3,15 @@
 == Confronto tra linguaggi di pubblicazione
 
 |===
-|             |latex  | asciidoc  | mediawiki
+|             |latex  | asciidoc  | asciidoctor | mediawiki
 |export pdf   
   |ottima +
   `pdflatex nomefile.tex`
   | buona     
+  |
   | ???
 |export epub  
+  |
   |
   |
   |
@@ -18,9 +20,11 @@
   |
   |
   |
+  |
 
 |supporto immagini
   |solo .jpg e .png no .svg
+  |
   |
   |
   
@@ -28,9 +32,11 @@
   |ottima
   |
   |
+  |
 
 |export in latex
   |n.a.
+  |
   |
   |
 
@@ -38,6 +44,8 @@
   |
   |
   |
+  |
+  
 |===
 
 
