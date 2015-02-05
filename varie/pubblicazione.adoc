@@ -1,0 +1,8 @@
+= Pubblicazioni 
+
+== Confronto tra linguaggi di pubblicazione
+
+|=
+|           |latex  | asciidoc  | mediawiki
+|export pdf |ottima | buona     | ???
+|=
