@@ -56,5 +56,4 @@ User=%I
 WantedBy=multi-user.target
 ```
 
-e lanciarlo con 
-systemctl start rygel@<nome-utente>
+e lanciarlo con `systemctl start rygel@<nome-utente>`
