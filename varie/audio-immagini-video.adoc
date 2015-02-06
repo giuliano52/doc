@@ -1,11 +1,9 @@
----
+=Audio Immagini e Video
 title: Audio Immagini Video
 author: Giuliano Dedda 
 date: 19/09/2014
----
 
-
-#DVD 
+== DVD 
 
 per fare una copia di sucurezza di un DVD su HD
 (vobcopy può dare un errore se usato direttamente dal device)
@@ -19,8 +17,28 @@ se vobcopy si blocca si può crere l'iso con ddrescue e poi lanciare vobcopy sul
     vobcopy -l out.iso
  
 
-#Mp3
+== Mp3
 
 Rimuovere il tag v1 (uso il programma _eye3D_)
 
     find ./ -iname "*.mp3" -exec eyeD3 --remove-v1  {} \;
+
+== UPNP/DNLA
+
+=== Rygel
+
+    sudo pacman -S rygel
+    sudo pacman -S gst-plugins-base gst-plugins-good gst-plugins-bad gst-plugins-ugly gst-libav
+
+edit di /etc/rygel.conf ed impostare il title con il nome del server in 
+
+[Tracker]
+title=nome_del_server
+e 
+[MediaExport]
+enabled=true
+title=nome_del_server
+
+inserire la cartella in cui ci sono le canzoni o i video separate da ;
+
+    
