@@ -46,15 +46,20 @@ nano /usr/lib/systemd/system/rygel@.service
 ```
 [Unit]
 Description=Rygel DLNA server
-After=syslog.target local-fs.target network.target
+After=syslog.target
+
 [Service]
+User=test-amm
+Group=gruppo
 ExecStart=/usr/bin/rygel
-Restart=always
-User=%I
+
 [Install]
 WantedBy=multi-user.target
+
 ```
 
 e lanciarlo con 
 
-   systemctl start rygel@<nome-utente>
+   systemctl start rygel
+   
+
