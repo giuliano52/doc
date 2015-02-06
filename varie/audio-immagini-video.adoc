@@ -1,6 +1,6 @@
-=Audio Immagini e Video
-Giuliano Dedda 
-06/02/2015
+= Audio Immagini e Video
+:author: Giuliano Dedda 
+:revdate: 06/02/2015
 
 == DVD 
 
