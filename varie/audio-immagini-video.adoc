@@ -49,17 +49,15 @@ Description=Rygel DLNA server
 After=syslog.target
 
 [Service]
-User=test-amm
-Group=gruppo
 ExecStart=/usr/bin/rygel
+User=%i
 
 [Install]
 WantedBy=multi-user.target
-
 ```
 
 e lanciarlo con 
 
-   systemctl start rygel
+   systemctl start rygel@<nome-utente>
    
 
