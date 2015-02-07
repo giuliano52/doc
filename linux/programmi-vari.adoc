@@ -81,6 +81,8 @@ modificare i seguenti campi:
     media_dir=/mnt/Musica       # directory dove si trovano i media (è possibile inserirne più di uno)
     friendly_name=RasberryPi    # nome visualizzato del server DNLA
 
+con un browser su http://ip.server:8200/ si vedono le statistiche
+
 === Rygel
 
     sudo pacman -S rygel
