@@ -72,6 +72,16 @@ su : http://wiki.ubuntu-it.org/Grafica/Ocr c'è una buona guida e un programma p
 
 == UPNP/DNLA
 
+== ReadyMedia (ex minidnla)
+
+    pacman -S minidlna
+    nano /etc/minidlna.conf
+    
+modificare i seguenti campi:
+    user=test-amm               # utente con cui parte il server
+    media_dir=/mnt/Musica       # directory dove si trovano i media (è possibile inserirne più di uno)
+    friendly_name=RasberryPi    # nome visualizzato del server DNLA
+
 === Rygel
 
     sudo pacman -S rygel
