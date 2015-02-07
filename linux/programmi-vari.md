@@ -1,9 +1,9 @@
----
-title: Programmi Vari
-author: Giuliano Dedda 
-date: 17/07/2014
----
-#corkscrew
+= Programmi Vari
+:author: Giuliano Dedda 
+:date: 17/07/2014
+
+
+== corkscrew
 
     pacman -S corkscrew
    
@@ -24,7 +24,7 @@ Test your SSH connection
     ssh serverip
 
 
-#Systemd
+== Systemd
 
 Comando                         | Effetto
 ----------------------------    | ----------------------------
@@ -60,13 +60,54 @@ per montare un disco remoto con l'utente_a inserire in /etc/fstab
 
     https://dav.box.com/dav /home/utente_a/mnt/box.com    davfs   defaults,uid=utente_a,gid=gruppo_a,noauto  0       0
     
-#OCR - tesseract
+== OCR 
+
+=== tesseract
 
 installare anche community/tesseract-data-ita
 
 tesseract converte solo da tif pertanto bisogna convertire i file prima:
 su : http://wiki.ubuntu-it.org/Grafica/Ocr c'è una buona guida e un programma per converitire un PDF con più pagine.
 
+
+== UPNP/DNLA
+
+=== Rygel
+
+    sudo pacman -S rygel
+    sudo pacman -S gst-plugins-base gst-plugins-good gst-plugins-bad gst-plugins-ugly gst-libav
+
+edit di /etc/rygel.conf ed impostare il title con il nome del server in 
+
+[Tracker]
+title=nome_del_server
+e 
+[MediaExport]
+enabled=true
+title=nome_del_server
+
+inserire la cartella in cui ci sono le canzoni o i video separate da ;
+
+fare il servizio per systemd 
+nano /usr/lib/systemd/system/rygel@.service
+
+```
+[Unit]
+Description=Rygel DLNA server
+After=syslog.target
+
+[Service]
+ExecStart=/usr/bin/rygel
+User=%i
+
+[Install]
+WantedBy=multi-user.target
+```
+
+e lanciarlo con 
+
+   systemctl start rygel@<nome-utente>
+   
 
 
 
