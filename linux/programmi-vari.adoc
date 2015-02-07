@@ -2,7 +2,6 @@
 :author: Giuliano Dedda 
 :date: 17/07/2014
 
-
 == corkscrew
 
     pacman -S corkscrew
@@ -23,7 +22,6 @@ Test your SSH connection
 
     ssh serverip
 
-
 == Systemd
 
 [options="header"]
@@ -36,22 +34,22 @@ Test your SSH connection
 |=======================
 Il servizio per la risoluzione dei nomi si chiama _systemd-resolved.service_ e genera il file /run/systemd/resolve/resolv.conf che viene linkato a /etc/resolv.conf
 
-##cose da verificare
+=== cose da verificare
 in /usr/lib/systemd/system/ ci dovrebbero essere i servizi disponibili
 in /etc/systemd/system quelli abilitati ?
 
-#Webdav
+== Webdav
 
-##davfs2
+=== davfs2
 
 installare davfs2 
 
-###Proxy
+==== Proxy
 in /etc/davfs2/davfs2.conf inserire
 
     proxy 127.0.0.1:28080
 
-###montare le directory
+==== montare le directory
 
 in /etc/davfs2/secrets inserire:
     
