@@ -1,8 +1,6 @@
----
-Title: NFS
----
+= NFS
 
-#SERVER
+== SERVER
 
      aptitude install nfs-common, nfs-kernel-server
     
@@ -15,7 +13,8 @@ es:
     service nfs start 
     exportfs 			mostra i filesystem esportati
 
-#CLIENT
+== CLIENT
+
 su arch : 
 
     sudo pacman -S nfs-utils
@@ -42,6 +41,6 @@ su fstab
     #NAS auto
     nfs_server:/mnt/HD/HD_a2 /mnt/nas nfs rw,hard,intr,nolock,user 0 0
  
-#Permessi
+== Permessi
 
 devono essere messi sul server (non è possibile ad esempio modificare l'owner di una cartella da root del client)
