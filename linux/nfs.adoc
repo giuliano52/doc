@@ -16,6 +16,9 @@ es:
     
 == CLIENT
 
+mostra gli export nfs di un host 192.168.1.100
+     showmount -e 192.168.1.100
+
 su arch : 
 
     sudo pacman -S nfs-utils
@@ -23,6 +26,8 @@ su arch :
     (forse i seguenti non servono)
     sudo systemctl start rpcbind.service
     sudo systemctl start nfs-client.target
+
+
 
     mount nomehost:/directory/ /mount/point 	per montare una directory via nfs
 
