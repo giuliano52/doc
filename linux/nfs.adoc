@@ -32,11 +32,11 @@ es
 
 se c'è l'errore : *mount.nfs: Operation not permitted* bisogna forzare nfs3
 
-     mount.nfs remote target directory -o ...,vers=3,...
+     mount.nfs remote target directory -o ...,nfsvers=3,...
 
 o in /etc/fstab:
 
-     remote target directory nfs ...,vers=3,... 0 0
+     remote target directory nfs ...,nfsvers=3,... 0 0
 
 su fstab
     
