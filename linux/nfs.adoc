@@ -11,7 +11,9 @@ editare il file /etc/exports nel seguente modo:
 es: 
 
     /home/test01/Software/Linux srv.domain.it(ro) 192.168.1.1(rw) 
-    service nfs start 
+    
+    systemctl enable nfs-server
+    
     exportfs 			mostra i filesystem esportati
     
 == CLIENT
