@@ -178,6 +178,9 @@ qualche errore ma produce lo stesso un pdf.
 Tuttavia se si sostituisce gli header con uno standard anche con pdflatex genera il pdf e con 
 piccole modifiche al file tex, si riesce a generare un pdf (anche con la matematica funzionante).
 
+oppure con (ma devo capire meglio le opzioni)
+
+	 a2x -ftex nomefile.adoc   
 	
 Pandoc
 ------
