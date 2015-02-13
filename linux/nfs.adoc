@@ -24,11 +24,11 @@ su arch :
     sudo systemctl start rpcbind.service
     sudo systemctl start nfs-client.target
 
-    mount nomehost://directory/ /mount/point 	per montare una directory via nfs
+    mount nomehost:/directory/ /mount/point 	per montare una directory via nfs
 
 es
 
-    sudo mount 192.168.1.51:///mnt/HD/HD_a2 ./nas/
+    sudo mount 192.168.1.51:/mnt/HD/HD_a2 ./nas/
 
 se c'è l'errore : *mount.nfs: Operation not permitted* bisogna forzare nfs3
 
