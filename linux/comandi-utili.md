@@ -60,6 +60,7 @@ Comando                             | Effetto
 ------------------------------------| ------------------------------------
 useradd -m -G sudo -s /bin/bash pino    | Crea l'utente _pino_ con la home (-m) e con il gruppo aggiuntivo 'sudo'
 usermod -aG sudo pino                   | Aggiunge il gruppo sudo all'utente _pino_
+groupadd -g 2000 nomeGruppo         | aggiunge il gruppo con id 2000
 
 #Comando Find
 
