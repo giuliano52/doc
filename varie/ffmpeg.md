@@ -60,7 +60,7 @@ visualizza i codec o i formati disponibili
 
     ffmpeg -i input  -c:v libx264 -c:a copy output.mkv
 
-The above command will copy over the audio as is. Convert the audio to AAC by replacing copy with libfdk_aac, libfaac or arc (ordered quality-wise)
+The above command will copy over the audio as is. Convert the audio to AAC by replacing copy with libfdk_aac, libfaac or aac (ordered quality-wise, but only aac is GPL compatible)
 
 ##MP3 
 
