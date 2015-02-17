@@ -1,0 +1,5 @@
+﻿= SAMPLE
+:author:	Author Name
+:revdate:   13 Febbraio 2015
+:revnumber: 0.1
+:numbered:		// mette i numeri sui capitolo
