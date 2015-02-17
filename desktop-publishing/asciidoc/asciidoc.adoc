@@ -166,6 +166,11 @@ installare asciidoctor-pdf e lanciare il comando
 
 Il PDF viene bene con l'eccezione della matematica. 
 
+oppure passare per docbook e poi convertirlo in pdf
+
+	asciidoc -a -v -b docbook -d book -a lang=it input_file.adoc
+	dblatex -V -T db2latex input_file.xml
+
 Latex
 ~~~~~
 Si può usare 
@@ -178,9 +183,16 @@ qualche errore ma produce lo stesso un pdf.
 Tuttavia se si sostituisce gli header con uno standard anche con pdflatex genera il pdf e con 
 piccole modifiche al file tex, si riesce a generare un pdf (anche con la matematica funzionante).
 
-oppure con (ma devo capire meglio le opzioni)
+oppure si passa per docbook
 
-	 a2x -ftex nomefile.adoc   
+	asciidoc -a -v -b docbook -d book -a lang=it input_file.adoc
+	dblatex -V -T db2latex --type=tex input_file.xml
+
+con pdflatex non genera il pdf perché mancano gli stili	
+Di default il path con gli stili latex di dblatex NON è presente
+per far funzionare il latex bisogna mettere i path corretti 
+di tutti gli stili /usr/share/dblatex/latex
+
 	
 Pandoc
 ------
