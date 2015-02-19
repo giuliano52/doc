@@ -30,8 +30,8 @@ usando l'output in html5, il table of content e il tema flask
  	
 per cambiate l'output si può copiare il backend (con estensione .conf) da /etc/asciidoc/ nella directory di lavoro 
 
-Epub
-~~~~
+== Epub
+
 c'è un bug che impone di fare un file che abbia gli header e che contenga un include 
 ad un altro file (vedi doc-epub.adoc)
 e poi lanciare (la parte matematica non viene)
@@ -42,8 +42,8 @@ oppure
 
 	a2x -fepub --no-xmllint -dbook indice.adoc
 	
-PDF
-~~~
+== PDF
+
 installare asciidoctor-pdf e lanciare il comando
 
 	./asciidoctor-pdf nome-file.adoc
@@ -55,8 +55,12 @@ oppure passare per docbook e poi convertirlo in pdf
 	asciidoc -a -v -b docbook -d book -a lang=it input_file.adoc
 	dblatex -V -T db2latex input_file.xml
 
-Latex
-~~~~~
+== Docbook
+sia per asciidoc che per asciidoctor usare il backend docbook
+ asciidoctor -b docbook matilde.adoc
+
+== Latex
+
 Si può usare 
 
 	 asciidoctor-latex nomefile.adoc -o outputfile.tex
@@ -78,12 +82,12 @@ per far funzionare il latex bisogna mettere i path corretti
 di tutti gli stili /usr/share/dblatex/latex
 
 	
-Pandoc
-------
+== Pandoc
+
 2014-12-24: Non funziona bene, le tabelle non vengono create, e la matematica non viene fatta bene
 
-GitHub
-------
+== GitHub
+
 Accetta la documentazione in asciidoc, e a parte la matematica il resto viene gestito bene
 
 
