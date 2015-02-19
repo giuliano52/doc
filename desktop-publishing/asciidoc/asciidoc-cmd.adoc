@@ -30,7 +30,7 @@ usando l'output in html5, il table of content e il tema flask
  	
 per cambiate l'output si può copiare il backend (con estensione .conf) da /etc/asciidoc/ nella directory di lavoro 
 
-== Epub
+=== Epub
 
 c'è un bug che impone di fare un file che abbia gli header e che contenga un include 
 ad un altro file (vedi doc-epub.adoc)
@@ -42,7 +42,7 @@ oppure
 
 	a2x -fepub --no-xmllint -dbook indice.adoc
 	
-== PDF
+=== PDF
 
 installare asciidoctor-pdf e lanciare il comando
 
@@ -55,12 +55,12 @@ oppure passare per docbook e poi convertirlo in pdf
 	asciidoc -a -v -b docbook -d book -a lang=it input_file.adoc
 	dblatex -V -T db2latex input_file.xml
 
-== Docbook
+=== Docbook
 sia per asciidoc che per asciidoctor usare il backend docbook
 	
 	asciidoctor -b docbook matilde.adoc
 
-== Latex
+=== Latex
 
 Si può usare 
 
