@@ -88,7 +88,7 @@ nano /etc/enviroment
 #</proxy>
 
 #<network>
-Vedi sezione NETWORK
+Vedi sezione NETWORK in systemd.adoc
 #</network>
 
 
