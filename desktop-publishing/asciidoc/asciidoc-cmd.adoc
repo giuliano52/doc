@@ -12,8 +12,8 @@
 == asciidoctor
 
     asciidoctor -a toc2 $INPUT_FILE input.adoc
-	-a toc    :inserisce l'indice all inizio
-	-a toc2   : inserisce l'indice lateralmente (e fisso) alla pagina html  
+       -a toc    :inserisce l'indice all inizio
+       -a toc2   : inserisce l'indice lateralmente (e fisso) alla pagina html  Per spostarlo a destra 
 
 
 == Output
