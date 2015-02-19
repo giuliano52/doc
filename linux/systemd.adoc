@@ -1,0 +1,103 @@
+= SYSTEMD
+:revdate: 19/2/2015
+
+
+== Systemd
+
+[options="header"]
+|=======================
+| Comando                        		| Effetto
+| journalctl -b 		        		| messagi dal boot
+| journalctl --no-pager		    		|messaggi senza visualizzazione a pagine
+| systemctl -t service -a 	   			| mostra i servizi al boot
+| systemctl list-unit-files      		| mostra lo stato dei servizi
+| systemctl --type=service --no-pager	| tutti i servizi
+|=======================
+Il servizio per la risoluzione dei nomi si chiama _systemd-resolved.service_ e genera il file /run/systemd/resolve/resolv.conf che viene linkato a /etc/resolv.conf
+
+=== cose da verificare
+in /usr/lib/systemd/system/ ci dovrebbero essere i servizi disponibili
+in /etc/systemd/system quelli abilitati ?
+
+== Network
+
+il comando per la gestione della rete è *netctl*
+
+per sapere le schede di rete:
+
+	dmesg | grep eth
+
+oppure
+
+ls /sys/class/net
+
+
+=== configurazione rete 
+
+	cp /etc/netctl/examples/profilo /etc/netctl/
+	vim profilo
+
+per vedere se funziona: 
+
+	netctl start <profilo>
+
+poi attivarlo definitivamente al boot: 
+
+	netctl enable <profile>
+
+per vedere la lista dei profili
+
+	netctl list
+
+
+
+== Timers
+
+per la lista dei programmi in esecuzione: `systemctl list-timers` 
+
+creare un nuovo servizio in /etc/systemd/system/nome.service 
+```
+[Unit]
+Description=Descrizione del servizio
+
+[Service]
+Nice=19
+IOSchedulingClass=2
+IOSchedulingPriority=7
+ExecStart=/root/bin/comando.sh
+```
+
+e creare il timer con lo stesso nome: /etc/systemd/system/nome.timer
+```
+[Unit]
+Description=Descrizione servizio
+
+[Timer]
+OnBootSec=10min
+OnUnitActiveSec=1h
+#OnCalendar=*-*-* 21:00:00
+
+[Install]
+WantedBy=timers.target
+```
+
+e attivarli con  
+
+	systemctl start nome.timer
+
+
+== Time setup
+
+lanciare il comando per far partire sntp
+
+    sudo  timedatectl set-ntp true 
+
+e configurare il  /etc/systemd/timesyncd.conf
+
+con 
+```
+[Time]
+NTP=ntp2.inrim.it ntp1.inrim.it
+FallbackNTP=0.pool.ntp.org 1.pool.ntp.org 0.fr.pool.ntp.org
+```
+

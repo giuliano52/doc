@@ -73,20 +73,9 @@ exit
 reboot
 ```
 
-# Time setup
+== Time
 
-lanciare il comando per far partire sntp
-
-    sudo  timedatectl set-ntp true 
-
-e configurare il  /etc/systemd/timesyncd.conf
-
-con 
-```
-[Time]
-NTP=ntp2.inrim.it ntp1.inrim.it
-FallbackNTP=0.pool.ntp.org 1.pool.ntp.org 0.fr.pool.ntp.org
-```
+vedi systemd.adoc
 
 # Post configuration
 
@@ -152,22 +141,7 @@ Server = http://repo.archlinux.fr/x86_64
 pacman -Sy yaourt
 ```
 
-#Network
-Bisogna usare netctl
-per sapere le schede di rete:
-	dmesg | grep eth
-oppure
-	ls /sys/class/net
 
-```
-cp /etc/netctl/examples/profilo /etc/netctl/
-nano profilo
-per vedere se funziona: 
-netctl start <profile>
-
-poi attivarlo definitivamente al boot: 
-netctl enable <profile>
-```
 
 
 ##Abilitare X via ssh 
