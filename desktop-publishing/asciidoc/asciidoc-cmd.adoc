@@ -1,0 +1,86 @@
+= asciidoc-comandi
+
+== asciidoc
+
+  asciidoc -b html5 -a icons -a toc2 -a theme=flask Matilde.adoc
+    -b        : imposta il backend
+    -a        : modifica gli attributi (possono essere messi anche all'interno dell'header dell'ascii doc)
+    -a toc    :inserisce l'indice all inizio
+    -a toc2   : inserisce l'indice lateralmente alla pagina html  
+    -a theme=flask  : immposta il tema (es volnitsky o flask) I temi si trovano in /etc/asciidoc/themes/
+  
+== asciidoctor
+
+
+== Output
+
+
+=== html
+	asciidoctor doc.adoc
+o
+	asciidoc -o doc-asciidoc.html doc.adoc
+	
+usando l'output in html5, il table of content e il tema flask
+ 
+ 	asciidoc -b html5 -a icons -a toc2 -a theme=flask Matilde.adoc
+ 	
+per cambiate l'output si può copiare il backend (con estensione .conf) da /etc/asciidoc/ nella directory di lavoro 
+
+Epub
+~~~~
+c'è un bug che impone di fare un file che abbia gli header e che contenga un include 
+ad un altro file (vedi doc-epub.adoc)
+e poi lanciare (la parte matematica non viene)
+
+	./asciidoctor-epub3 ../../doc-epub.adoc
+	
+oppure
+
+	a2x -fepub --no-xmllint -dbook indice.adoc
+	
+PDF
+~~~
+installare asciidoctor-pdf e lanciare il comando
+
+	./asciidoctor-pdf nome-file.adoc
+
+Il PDF viene bene con l'eccezione della matematica. 
+
+oppure passare per docbook e poi convertirlo in pdf
+
+	asciidoc -a -v -b docbook -d book -a lang=it input_file.adoc
+	dblatex -V -T db2latex input_file.xml
+
+Latex
+~~~~~
+Si può usare 
+
+	 asciidoctor-latex nomefile.adoc -o outputfile.tex
+
+con _pdflatex_ fornisce un errore nella creazione del pdf, con  _xelatex_ o con _luatex_ dà
+qualche errore ma produce lo stesso un pdf. 
+
+Tuttavia se si sostituisce gli header con uno standard anche con pdflatex genera il pdf e con 
+piccole modifiche al file tex, si riesce a generare un pdf (anche con la matematica funzionante).
+
+oppure si passa per docbook
+
+	asciidoc -a -v -b docbook -d book -a lang=it input_file.adoc
+	dblatex -V -T db2latex --type=tex input_file.xml
+
+con pdflatex non genera il pdf perché mancano gli stili	
+Di default il path con gli stili latex di dblatex NON è presente
+per far funzionare il latex bisogna mettere i path corretti 
+di tutti gli stili /usr/share/dblatex/latex
+
+	
+Pandoc
+------
+2014-12-24: Non funziona bene, le tabelle non vengono create, e la matematica non viene fatta bene
+
+GitHub
+------
+Accetta la documentazione in asciidoc, e a parte la matematica il resto viene gestito bene
+
+
+
