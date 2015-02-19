@@ -46,7 +46,7 @@ oppure
 
 installare asciidoctor-pdf e lanciare il comando
 
-	./asciidoctor-pdf nome-file.adoc
+	./asciidoctor-pdf input_file.adoc
 
 Il PDF viene bene con l'eccezione della matematica. 
 
@@ -58,7 +58,8 @@ oppure passare per docbook e poi convertirlo in pdf
 === Docbook
 sia per asciidoc che per asciidoctor usare il backend docbook
 	
-	asciidoctor -b docbook matilde.adoc
+	asciidoc -b docbook input_file.adoc
+	asciidoctor -b docbook input_file.adoc
 
 === Latex
 
