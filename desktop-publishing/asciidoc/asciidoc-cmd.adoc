@@ -57,7 +57,8 @@ oppure passare per docbook e poi convertirlo in pdf
 
 == Docbook
 sia per asciidoc che per asciidoctor usare il backend docbook
- asciidoctor -b docbook matilde.adoc
+	
+	asciidoctor -b docbook matilde.adoc
 
 == Latex
 
