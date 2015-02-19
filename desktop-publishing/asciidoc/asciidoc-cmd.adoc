@@ -63,7 +63,7 @@ sia per asciidoc che per asciidoctor usare il backend docbook
 
 === Latex
 
-*asciidoctor*
+==== asciidoctor
 
 istallare asciidoctor-latex 
 
@@ -89,13 +89,12 @@ la produzione del pdf funziona.
 
 Per gli accenti bisogna inserire anche : 
 
-S, con  _xelatex_ o con _luatex_ dà
-qualche errore ma produce lo stesso un pdf. 
+Anche  _xelatex_ produce un pdf corretto, con _luatex_ dà qualche errore.
 
 Tuttavia se si sostituisce gli header con uno standard anche con pdflatex genera il pdf e con 
 piccole modifiche al file tex, si riesce a generare un pdf (anche con la matematica funzionante).
 
-*asciidoc*
+==== asciidoc
 
 si può usare a2x che di fatto genera il docbook e lo converte
 
