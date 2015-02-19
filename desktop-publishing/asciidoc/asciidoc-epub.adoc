@@ -9,4 +9,7 @@ v1.0, 2014-04-15
 :copyright: CC-BY-SA 3.0
 :stem: latexmath
 
+Per fare un epub con asciidoctor (ma non con asciidoc) serve un file principale che contenga uno o più altri file
+note: è un bug che verrà risolto (19/2/2015
+
 include::asciidoc.adoc[]
