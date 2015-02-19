@@ -2,14 +2,18 @@
 
 == asciidoc
 
-  asciidoc -b html5 -a icons -a toc2 -a theme=flask Matilde.adoc
+  asciidoc -b html5 -a icons -a toc2 -a theme=flask input.adoc
     -b        : imposta il backend
     -a        : modifica gli attributi (possono essere messi anche all'interno dell'header dell'ascii doc)
     -a toc    :inserisce l'indice all inizio
-    -a toc2   : inserisce l'indice lateralmente alla pagina html  
+    -a toc2   : inserisce l'indice lateralmente (e fisso) alla pagina html  
     -a theme=flask  : immposta il tema (es volnitsky o flask) I temi si trovano in /etc/asciidoc/themes/
   
 == asciidoctor
+
+    asciidoctor -a toc2 $INPUT_FILE input.adoc
+	-a toc    :inserisce l'indice all inizio
+	-a toc2   : inserisce l'indice lateralmente (e fisso) alla pagina html  
 
 
 == Output
@@ -22,7 +26,7 @@ o
 	
 usando l'output in html5, il table of content e il tema flask
  
- 	asciidoc -b html5 -a icons -a toc2 -a theme=flask Matilde.adoc
+ 	asciidoc -b html5 -a icons -a toc2 -a theme=flask input.adoc
  	
 per cambiate l'output si può copiare il backend (con estensione .conf) da /etc/asciidoc/ nella directory di lavoro 
 
