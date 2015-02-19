@@ -95,7 +95,7 @@ Immagini
 --------
 image::img/img1.jpg[Alt text]
 
-per fare le immagini circondate dal testo (float) 
+per fare le immagini circondate dal testo (float)   *solo asciidoctor*
 
 image::img/img1.jpg[role="thumb right"]
 
