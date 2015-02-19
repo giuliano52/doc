@@ -95,6 +95,10 @@ Immagini
 --------
 image::img/img1.jpg[Alt text]
 
+per fare le immagini circondate dal testo (float) 
+
+image::img/img1.jpg[role="thumb right"]
+
 Epigrafi
 --------
 
