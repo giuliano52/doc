@@ -93,7 +93,9 @@ qualche errore ma produce lo stesso un pdf.
 Tuttavia se si sostituisce gli header con uno standard anche con pdflatex genera il pdf e con 
 piccole modifiche al file tex, si riesce a generare un pdf (anche con la matematica funzionante).
 
-oppure si passa per docbook
+*asciidoc*
+
+si può usare a2x che di fatto genera il docbook e lo converte
 
 	asciidoc -a -v -b docbook -d book -a lang=it input_file.adoc
 	dblatex -V -T db2latex --type=tex input_file.xml
@@ -103,7 +105,6 @@ Di default il path con gli stili latex di dblatex NON è presente
 per far funzionare il latex bisogna mettere i path corretti 
 di tutti gli stili /usr/share/dblatex/latex
 
-	
 == Pandoc
 
 2014-12-24: Non funziona bene, le tabelle non vengono create, e la matematica non viene fatta bene
