@@ -11,7 +11,7 @@
 | journalctl --no-pager		    		|messaggi senza visualizzazione a pagine
 | systemctl -t service -a 	   			| mostra i servizi al boot
 | systemctl list-unit-files      		| mostra lo stato dei servizi
-| systemctl --type=service --no-pager	| tutti i servizi
+| systemctl -t service --no-pager	| tutti i servizi
 |=======================
 Il servizio per la risoluzione dei nomi si chiama _systemd-resolved.service_ e genera il file /run/systemd/resolve/resolv.conf che viene linkato a /etc/resolv.conf
 
@@ -26,7 +26,7 @@ il comando per la gestione della rete è *netctl*
 per sapere le schede di rete:
 
 	dmesg | grep eth
-
+reboot
 oppure
 
 ls /sys/class/net
@@ -49,7 +49,9 @@ per vedere la lista dei profili
 
 	netctl list
 
+== Hostname
 
+hostnamectl set-hostname myhostname
 
 == Timers
 
