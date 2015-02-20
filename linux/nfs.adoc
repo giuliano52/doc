@@ -8,6 +8,7 @@
 editare il file /etc/exports nel seguente modo:
 
     NomeDirDaEsportare host1(opt) host2(opt) 
+    
 es: 
 
     /home/test01/Software/Linux srv.domain.it(ro) 192.168.1.1(rw) 
