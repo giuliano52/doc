@@ -1,10 +1,6 @@
----
-title: Apache
-author: Giuliano Dedda 
-date: 20/08/2014
----
+= APACHE
 
-#Apache su Arch
+== Apache su Arch
 
 per le user-dir i permessi della home e della public_html devono essere:
 
@@ -14,12 +10,12 @@ per le user-dir i permessi della home e della public_html devono essere:
 far ripartire httpd.service. Per il _php_ vedi la wiki di arch
     
 
-# Varie
+== Varie
 per vedere i moduli attivi:
 
     apache2ctl -t -D DUMP_MODULES
 
-#VirtualHost
+== VirtualHost
 
 Prima di fare alti virtualhost è meglio spostare  quello di default in /var/www/default 
 
@@ -43,7 +39,7 @@ se serve si può inserire un blocco particolare per una directory all'interno de
     </Directory>
 
 
-#Userdir
+== Userdir
 
     a2enmod userdir
 abilita la directory nelle home public_html
@@ -58,7 +54,7 @@ per abilitare anche il php andare in /etc/apache2/mods-enabled/php5.conf
     
 e commentarle con un #
 
-#Modsecurity
+== Modsecurity
 
      apt-get install libapache2-modsecurity 
      cp /etc/modsecurity/modsecurity.conf-recommended /etc/modsecurity/modsecurity.conf
@@ -128,7 +124,7 @@ e deve restiturie: Content-Encoding: gzip
 per joomla abilitarlo dal pannello di contollo: Global Configuration > Server > Server Settings > GZIP Page Compression
 
 
-#Rev-Proxy
+== Rev-Proxy
 
 Abilitare il modulo 
 
@@ -150,7 +146,7 @@ creo il file /etc/apache2/sites-available/revprx-www.mysite.local
 	 ProxyPass / http://sito-interno/ 
      </VirtualHost>
 
-##Esempi
+=== Esempi
 esempi: 
 www.esterno.it → www.interno.it
 
@@ -178,7 +174,7 @@ Metto a posto i web server che non supportano correttamente http1.1
     SetEnv force-proxy-request-1.0 1
     SetEnv proxy-nokeepalive 1
 
-##per pubblicare OWA
+=== per pubblicare OWA
 
 abilitare il mod_rewrite
     
@@ -271,7 +267,23 @@ inserire dentro /etc/hosts il record: mail.miosito.it
 </VirtualHost>
 ```
 
-##phpmyadmin
+== PHP
+
+=== accelleratori
+
+// - 14/2/2015
+
+per accellerare php installato: 
+php-xcache ed abilitato in : /etc/php/conf.d/xcache.ini
+
+poi installato anche: memcached ed abilitato (da capire se serve)
+ systemctl start memcached.service
+
+ 
+
+
+
+=== phpmyadmin
 
 se si desidera che phpmyadmin sia visibile solo per un virtual host bisogna copiare il contenuto del file /etc/apache2/conf.d/phpmyadmin.conf nel virtual host di pertinenza e quindi cancellare il file. 
 
