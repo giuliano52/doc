@@ -14,10 +14,12 @@
 		-b        : imposta il backend
 		-a        : modifica gli attributi (possono essere messi anche all'interno dell'header dell'ascii doc)
 		-a toc    :inserisce l'indice all inizio
-		-a toc2   : inserisce l'indice lateralmente (e fisso) alla pagina html  
+		-a toc=right : inserisce l'indice lateralmente a destra (e fisso) alla pagina html  
 		-a theme=flask  : immposta il tema (es volnitsky o flask) I temi si trovano in /etc/asciidoc/themes/
-  
 
+gli attributi possono anche essere messi nell'header del .adoc nella seguente forma:
+:toc: right
+  
 == Output
 
 === html
