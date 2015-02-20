@@ -18,7 +18,8 @@
 		-a theme=flask  : immposta il tema (es volnitsky o flask) I temi si trovano in /etc/asciidoc/themes/
 
 gli attributi possono anche essere messi nell'header del .adoc nella seguente forma:
-:toc: right
+
+	:toc: right
   
 == Output
 
