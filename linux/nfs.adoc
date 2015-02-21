@@ -59,3 +59,9 @@ su fstab
 
 devono essere messi sul server (non è possibile ad esempio modificare l'owner di una cartella da root del client)
 
+== Diversi filesystem 
+si possono esportare più filesystem sotto ad una stessa directory di export , ma bisogna esplicitare
+ogni file system nel file `/etx/exports` . Per ricaricare le modifiche lanciare:
+
+     exportfs -a
+     
