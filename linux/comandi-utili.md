@@ -36,6 +36,7 @@ mmls												  	| Gestisce i dischi creati con dd
 fdupes -r ./										  	| Trova i files duplicati in una directory
 tune2fs -m 0 /dev/sdb1                                  | mette a 0% lo spazio riservato a root
 e2label /dev/sdd1 ETICHETTA                             | imposta l'etichetta per una partizione
+file -Ls /dev/sdb1                                      | informazioni sul filesystem (tipo , uuid ..)
 
 # Stato sistema
 Comando                             | Effetto
