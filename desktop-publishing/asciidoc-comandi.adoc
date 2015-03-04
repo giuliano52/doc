@@ -28,12 +28,26 @@ gli attributi possono anche essere messi nell'header del .adoc nella seguente fo
 ==== Tramite asciidoctor
 
 	asciidoctor $INPUT_FILE	
+	
+==== Tramite asciidoc
+	
+	asciidoc -o doc-asciidoc.html doc.adoc
+	
+usando l'output in html5, il table of content e il tema flask
+ 
+ 	asciidoc -b html5 -a icons -a toc2 -a theme=flask input.adoc
+ 	
+per cambiate l'output si può copiare il backend (con estensione .conf) da /etc/asciidoc/ nella directory di lavoro 
 
 === Docbook
 
 ==== Tramite asciidoctor
 
-	asciidoctor -b docbook $INPUT_FILE
+	asciidoctor -b docbook input.adoc
+	
+==== Tramite asciidoc
+	
+	asciidoc -b docbook input_file.adoc
 
 === EPUB
 Il file prodotto con 'xsltproc' è molto buono. Quello con 'asciidoctor-epub3' lo genera in formato epub3
@@ -56,60 +70,29 @@ Trasformare l'adoc in docbok e poi
 
 	asciidoctor-epub3 $INPUT_FILE
 	
+c'è un bug che impone di fare un file che abbia gli header e che contenga almeno un include 
+ad un altro file (vedi doc-epub.adoc)
+(la parte matematica non viene)
+
+	
 ==== Tramite docbook-dbtoepub
 Convertirlo in docbook, e poi usare dbtoepub (che deve essere installato separatamente)
 
 	dbtoepub -s /usr/share/xml/docbook/xsl-stylesheets-1.78.1/epub/docbook.xsl $INPUT_FILE
 	
-=== PDF
-
-=== docbook-dblatex
-Convertirlo in docboc e poi
-
-	dblatex -V -T  db2latex $INPUT_FILE
-
-=== Latex
-I risultati migliori vengono con asciidoctor-latex, il file latex è molto pulito. 
-
-==== Asciidoctor-latex
-Tramite aciidoctor latex (vedi sotto per l'installazione)
-
-	asciidoctor-latex $INPUT_FILE
-
-==== docbook-dblatex
-
-Convertirlo in docboc e poi
-
-	dblatex -V -T db2latex -t tex $INPUT_FILE
-
-	
-//// ----------------------------------------- OLD
-=== html
-	asciidoctor doc.adoc
-o
-	asciidoc -o doc-asciidoc.html doc.adoc
-	
-usando l'output in html5, il table of content e il tema flask
- 
- 	asciidoc -b html5 -a icons -a toc2 -a theme=flask input.adoc
- 	
-per cambiate l'output si può copiare il backend (con estensione .conf) da /etc/asciidoc/ nella directory di lavoro 
-
-=== Epub
-
-c'è un bug che impone di fare un file che abbia gli header e che contenga un include 
-ad un altro file (vedi doc-epub.adoc)
-e poi lanciare (la parte matematica non viene)
-
-	./asciidoctor-epub3 ../../doc-epub.adoc
-	
-oppure
+==== Tramite a2x 
+Va bene solo se si usa un file con la sintassi di asciidoc e non quella estesa di asciidoctor
 
 	a2x -fepub --no-xmllint -dbook indice.adoc
 	
 === PDF
 
-==== asciidoctor 
+==== Tramite docbook-dblatex
+Convertirlo in docboc e poi
+
+	dblatex -V -T  db2latex input.xml
+	
+==== Tramite asciidoctor-pdf
 
 installare asciidoctor-pdf e lanciare il comando
 
@@ -117,24 +100,28 @@ installare asciidoctor-pdf e lanciare il comando
 
 Il PDF viene bene con l'eccezione della matematica. 
 
-==== asciidoc
-
-oppure passare per docbook e poi convertirlo in pdf
-
-	asciidoc -a -v -b docbook -d book -a lang=it input_file.adoc
-	dblatex -V -T db2latex input_file.xml
-
-=== Docbook
-sia per asciidoc che per asciidoctor usare il backend docbook
-	
-	asciidoc -b docbook input_file.adoc
-	asciidoctor -b docbook input_file.adoc
-
 === Latex
+I risultati migliori vengono con asciidoctor-latex, il file latex è molto pulito. 
+Con docbook-latex mancano tutti gli stili. 
 
-==== asciidoctor
+==== Asciidoctor-latex
+Tramite aciidoctor latex (vedi sotto per l'installazione)
 
-istallare asciidoctor-latex 
+	asciidoctor-latex input.adoc
+
+==== docbook-dblatex
+
+Convertirlo in docboc e poi
+
+	dblatex -V -T db2latex -t tex input.xml
+
+con 'pdflatex' non genera il pdf perché mancano gli stili	
+Di default il path con gli stili latex di dblatex NON è presente
+per far funzionare il latex bisogna mettere i path corretti 
+di tutti gli stili /usr/share/dblatex/latex
+
+
+== istallare asciidoctor-latex 
 
 	git clone https://github.com/asciidoctor/asciidoctor-latex.git
 	cd asciidoctor-latex
@@ -173,20 +160,6 @@ Anche  _xelatex_ produce un pdf corretto, con _luatex_ dà qualche errore.
 Tuttavia se si sostituisce gli header con uno standard anche con pdflatex genera il pdf e con 
 piccole modifiche al file tex, si riesce a generare un pdf (anche con la matematica funzionante).
 
-==== asciidoc
-
-si può usare a2x che di fatto genera il docbook e lo converte
-
-	asciidoc -a -v -b docbook -d book -a lang=it input_file.adoc
-	dblatex -V -T db2latex --type=tex input_file.xml
-
-
-Il latex prodotto è meno comprensibile rispetto a quello fatto con asciidoctor-latex
-
-con _pdflatex_ non genera il pdf perché mancano gli stili	
-Di default il path con gli stili latex di dblatex NON è presente
-per far funzionare il latex bisogna mettere i path corretti 
-di tutti gli stili /usr/share/dblatex/latex
 
 == Pandoc
 
@@ -196,5 +169,3 @@ di tutti gli stili /usr/share/dblatex/latex
 
 Accetta la documentazione in asciidoc, e a parte la matematica il resto viene gestito bene
 
-
-////
