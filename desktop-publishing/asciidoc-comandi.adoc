@@ -1,0 +1,200 @@
+= asciidoc-comandi
+
+== Linea di comando
+
+=== asciidoctor
+
+	asciidoctor -a toc2 $INPUT_FILE input.adoc
+		-a toc    :inserisce l'indice all inizio
+		-a toc2   : inserisce l'indice lateralmente (e fisso) alla pagina html  Per spostarlo a destra 
+
+=== asciidoc
+
+	asciidoc -b html5 -a icons -a toc2 -a theme=flask input.adoc
+		-b        : imposta il backend
+		-a        : modifica gli attributi (possono essere messi anche all'interno dell'header dell'ascii doc)
+		-a toc    :inserisce l'indice all inizio
+		-a toc=right : inserisce l'indice lateralmente a destra (e fisso) alla pagina html  
+		-a theme=flask  : immposta il tema (es volnitsky o flask) I temi si trovano in /etc/asciidoc/themes/
+
+gli attributi possono anche essere messi nell'header del .adoc nella seguente forma:
+
+	:toc: right
+  
+== Output
+
+=== HTML
+
+==== Tramite asciidoctor
+
+	asciidoctor $INPUT_FILE	
+
+=== Docbook
+
+==== Tramite asciidoctor
+
+	asciidoctor -b docbook $INPUT_FILE
+
+=== EPUB
+Il file prodotto con 'xsltproc' è molto buono. Quello con 'asciidoctor-epub3' lo genera in formato epub3
+Quello generato con 'dbtoepub' è praticamente identico a quello con 'xsltproc', ma necessita di installare in più
+dbtoepub  
+
+==== Tramite docbook-xsltproc
+Trasformare l'adoc in docbok e poi
+	
+	xsltproc /usr/share/xml/docbook/xsl-stylesheets-1.78.1/epub/docbook.xsl $INPUT_FILE 
+	echo "application/epub+zip" > mimetype
+	cd OEBPS
+	ln -s ../../../2.edit/img/ img
+	cd ..
+	zip -0Xq  $filename.epub mimetype
+	zip -Xr9D $filename.epub OEBPS META-INF 
+	rm -fr OEBPS META-INF mimetype
+
+==== Tramite asciidoctor-epub3
+
+	asciidoctor-epub3 $INPUT_FILE
+	
+==== Tramite docbook-dbtoepub
+Convertirlo in docbook, e poi usare dbtoepub (che deve essere installato separatamente)
+
+	dbtoepub -s /usr/share/xml/docbook/xsl-stylesheets-1.78.1/epub/docbook.xsl $INPUT_FILE
+	
+=== PDF
+
+=== docbook-dblatex
+Convertirlo in docboc e poi
+
+	dblatex -V -T  db2latex $INPUT_FILE
+
+=== Latex
+I risultati migliori vengono con asciidoctor-latex, il file latex è molto pulito. 
+
+==== Asciidoctor-latex
+Tramite aciidoctor latex (vedi sotto per l'installazione)
+
+	asciidoctor-latex $INPUT_FILE
+
+==== docbook-dblatex
+
+Convertirlo in docboc e poi
+
+	dblatex -V -T db2latex -t tex $INPUT_FILE
+
+	
+//// ----------------------------------------- OLD
+=== html
+	asciidoctor doc.adoc
+o
+	asciidoc -o doc-asciidoc.html doc.adoc
+	
+usando l'output in html5, il table of content e il tema flask
+ 
+ 	asciidoc -b html5 -a icons -a toc2 -a theme=flask input.adoc
+ 	
+per cambiate l'output si può copiare il backend (con estensione .conf) da /etc/asciidoc/ nella directory di lavoro 
+
+=== Epub
+
+c'è un bug che impone di fare un file che abbia gli header e che contenga un include 
+ad un altro file (vedi doc-epub.adoc)
+e poi lanciare (la parte matematica non viene)
+
+	./asciidoctor-epub3 ../../doc-epub.adoc
+	
+oppure
+
+	a2x -fepub --no-xmllint -dbook indice.adoc
+	
+=== PDF
+
+==== asciidoctor 
+
+installare asciidoctor-pdf e lanciare il comando
+
+	./asciidoctor-pdf input_file.adoc
+
+Il PDF viene bene con l'eccezione della matematica. 
+
+==== asciidoc
+
+oppure passare per docbook e poi convertirlo in pdf
+
+	asciidoc -a -v -b docbook -d book -a lang=it input_file.adoc
+	dblatex -V -T db2latex input_file.xml
+
+=== Docbook
+sia per asciidoc che per asciidoctor usare il backend docbook
+	
+	asciidoc -b docbook input_file.adoc
+	asciidoctor -b docbook input_file.adoc
+
+=== Latex
+
+==== asciidoctor
+
+istallare asciidoctor-latex 
+
+	git clone https://github.com/asciidoctor/asciidoctor-latex.git
+	cd asciidoctor-latex
+	gem build asciidoctor-latex.gemspec
+	gem install *.gem
+	
+inserire nel path: 
+
+	PATH=/home/gino/.gem/ruby/2.2.0/bin:$PATH
+
+	asciidoctor-latex nomefile.adoc -o outputfile.tex
+
+il .tex prodotto è abbastanza chiaro. Ma _pdflatex_ fornisce un errore nella creazione del pdf: manca 
+lo stile: mhchem.sty. Dovrebbe mancare il pacchetto: `yaourt -S aur/texlive-mhchem-bundle ` ma non si installa
+
+Tuttavia se si commenta la riga dal file .tex il pacchetto mhchem (formule chimiche)
+	
+	\usepackage[version=3]{mhchem}
+	
+la produzione del pdf funziona. 
+
+Per gli accenti bisogna inserire anche : 
+
+	\usepackage[T1]{fontenc} % per visualizzare in output caratteri speciali o accentati
+	\usepackage[utf8x]{inputenc} % se ci sono problemi con file unicode, meglio usare utf8x
+
+è possibile cabiare il document class in book. Se compare l'errore: _LaTeX Error: Too many unprocessed floats_ inserire nel .tex 
+
+	\clearpage
+	
+giusto prima dell'errore. _\clearpage_ fa una nuova riga e fa il flush di tutti i 
+float rimasti
+
+Anche  _xelatex_ produce un pdf corretto, con _luatex_ dà qualche errore.
+
+Tuttavia se si sostituisce gli header con uno standard anche con pdflatex genera il pdf e con 
+piccole modifiche al file tex, si riesce a generare un pdf (anche con la matematica funzionante).
+
+==== asciidoc
+
+si può usare a2x che di fatto genera il docbook e lo converte
+
+	asciidoc -a -v -b docbook -d book -a lang=it input_file.adoc
+	dblatex -V -T db2latex --type=tex input_file.xml
+
+
+Il latex prodotto è meno comprensibile rispetto a quello fatto con asciidoctor-latex
+
+con _pdflatex_ non genera il pdf perché mancano gli stili	
+Di default il path con gli stili latex di dblatex NON è presente
+per far funzionare il latex bisogna mettere i path corretti 
+di tutti gli stili /usr/share/dblatex/latex
+
+== Pandoc
+
+2014-12-24: Non funziona bene, le tabelle non vengono create, e la matematica non viene fatta bene
+
+== GitHub
+
+Accetta la documentazione in asciidoc, e a parte la matematica il resto viene gestito bene
+
+
+////
