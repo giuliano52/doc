@@ -25,6 +25,7 @@ diff -e file.old file.new > diff1.txt                   | salva il diff di due f
 
 
 Per trovare i duplicati e ordinarli per dimensione:
+
     fdupes -R -S ./ > dup.txt
     awk '$1=""$1' RS='' FS='\n' OFS='\034' dup.txt |  sort -n |  awk '$1=""$1' FS='\034' OFS='\n' ORS='\n\n' > dup.sort.txt
 
