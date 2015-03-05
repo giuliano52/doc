@@ -1,4 +1,4 @@
-= documentazione informatica
+= documentazione
 
-Si trovano i vari appunti su argomenti vari di informatica
+Si trovano i vari appunti su argomenti vari
 
