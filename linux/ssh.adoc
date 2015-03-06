@@ -1,8 +1,6 @@
----
-title: SSH 
-author: Giuliano Dedda 
-date: 20/07/2014
----
+= SSH 
+:author: Giuliano Dedda 
+:date: 06/03/2015
 
 per eseguire un commando: 
 
@@ -16,24 +14,24 @@ se si vuole usare lsft con una porta diversa:
 
     sftp -oPort=1234 user@host
 
-#Autenticazione con chiave pubblica
+== Autenticazione con chiave pubblica
 
-sul client: 
+sul client (non iserire la passphrase se si vuole il login automatico): 
 
-    ssh-keygen -t dsa (non iserire la passphrase se si vuole il login automatico)
+    ssh-keygen -t dsa -C "your_email@example.com" 
     scp -P <porta> ~/.ssh/id_dsa.pub utente@server:
 	
 sul server
 
     cat id_dsa.pub >> ~/.ssh/authorized_keys
 
-#Configuarzioni /etc/ssh/sshd_config
+== Configuarzioni /etc/ssh/sshd_config
 
     Banner 		imposta il banner prima del login
     X11Forwarding 	(yes|no) abilita l'export delle sessioni X11
 
 
-#SSHFS
+== SSHFS
 installare sshfs
 
     $ sshfs USERNAME@HOSTNAME_OR_IP:/PATH LOCAL_MOUNT_POINT SSH_OPTIONS
