@@ -18,6 +18,9 @@ per vedere la lista dei servizi installati
   cygrunsrv -L
 
 === X per Windows
+
+sulla macchina linux deve essere presente il pacchetto xorg-xauth
+
 Scaricare Cygwin 
 instalalre anche i pacchetti: xorg-server e xhost
 
