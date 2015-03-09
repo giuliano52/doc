@@ -19,7 +19,8 @@ per vedere la lista dei servizi installati
 
 === X per Windows
 
-sulla macchina linux deve essere presente il pacchetto xorg-xauth
+sulla macchina linux deve essere presente il pacchetto xorg-xauth e in '/etc/ssh/sshd_config' deve essere 
+abilitato il comando 'X11Forwarding yes'
 
 Scaricare Cygwin 
 instalalre anche i pacchetti: xorg-server e xhost
