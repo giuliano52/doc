@@ -1,16 +1,22 @@
----
-title: WINDOWS
+= WINDOWS
 author: Giuliano Dedda 
 date: 15/07/2014
----
 
-#Comandi vari
+== Comandi vari
 ```
 whoami /fqdn  |    Fornisce il FQDN
 whoami /user  |    Fornisce il SID
 ```
 
-#X per Windows
+
+== CYGWIN
+
+=== servizi 
+
+per vedere la lista dei servizi installati
+  cygrunsrv -L
+
+=== X per Windows
 Scaricare Cygwin 
 instalalre anche i pacchetti: xorg-server e xhost
 
