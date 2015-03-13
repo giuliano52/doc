@@ -1,5 +1,8 @@
 = Blocchi Ascii doc
 
+I blocchi vengono delimitati da due segni meno --
+
+Nel'html generato 'verse' e 'literal' sono diversi: 'literal ha lo sfondo
 
 Verse:: 
 
