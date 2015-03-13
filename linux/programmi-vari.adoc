@@ -68,6 +68,10 @@ modificare i seguenti campi:
 
 con un browser su http://ip.server:8200/ si vedono le statistiche
 
+Per fare il rescan del db
+
+    minidlnad -R
+
 === Rygel
 
     sudo pacman -S rygel
