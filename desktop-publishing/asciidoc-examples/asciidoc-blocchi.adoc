@@ -1,0 +1,47 @@
+= Blocchi Ascii doc
+
+
+Verse:: 
+
+[verse]
+--
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac hendrerit elit. Proin purus nisi, tincidunt ut vestibulum vel, varius ac ligula. 
+
+Quisque vestibulum lobortis purus sit amet sagittis. Praesent vitae ante in risus pretium consequat. Duis vel lacus nec augue tristique feugiat. 
+
+Fusce fringilla mauris ut erat hendrerit pellentesque a a diam. Sed faucibus euismod tristique. Suspendisse lacinia sagittis fermentum. Praesent faucibus purus eu dolor finibus tristique. Nulla in blandit elit. Mauris tortor purus, mattis dignissim est eget, varius suscipit nulla. Curabitur ac cursus mauris, accumsan aliquam arcu.
+--
+
+Pass::
+
+[pass]
+--
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac hendrerit elit. Proin purus nisi, tincidunt ut vestibulum vel, varius ac ligula. 
+
+Quisque vestibulum lobortis purus sit amet sagittis. Praesent vitae ante in risus pretium consequat. Duis vel lacus nec augue tristique feugiat. 
+
+Fusce fringilla mauris ut erat hendrerit pellentesque a a diam. Sed faucibus euismod tristique. Suspendisse lacinia sagittis fermentum. Praesent faucibus purus eu dolor finibus tristique. Nulla in blandit elit. Mauris tortor purus, mattis dignissim est eget, varius suscipit nulla. Curabitur ac cursus mauris, accumsan aliquam arcu.
+--
+
+
+Literal::
+
+[literal]
+--
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac hendrerit elit. Proin purus nisi, tincidunt ut vestibulum vel, varius ac ligula. 
+
+Quisque vestibulum lobortis purus sit amet sagittis. Praesent vitae ante in risus pretium consequat. Duis vel lacus nec augue tristique feugiat. 
+
+Fusce fringilla mauris ut erat hendrerit pellentesque a a diam. Sed faucibus euismod tristique. Suspendisse lacinia sagittis fermentum. Praesent faucibus purus eu dolor finibus tristique. Nulla in blandit elit. Mauris tortor purus, mattis dignissim est eget, varius suscipit nulla. Curabitur ac cursus mauris, accumsan aliquam arcu.
+--
+
+Quote::
+
+[quote]
+--
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac hendrerit elit. Proin purus nisi, tincidunt ut vestibulum vel, varius ac ligula. 
+
+Quisque vestibulum lobortis purus sit amet sagittis. Praesent vitae ante in risus pretium consequat. Duis vel lacus nec augue tristique feugiat. 
+
+Fusce fringilla mauris ut erat hendrerit pellentesque a a diam. Sed faucibus euismod tristique. Suspendisse lacinia sagittis fermentum. Praesent faucibus purus eu dolor finibus tristique. Nulla in blandit elit. Mauris tortor purus, mattis dignissim est eget, varius suscipit nulla. Curabitur ac cursus mauris, accumsan aliquam arcu.
+--
