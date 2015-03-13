@@ -1,6 +1,6 @@
 = Blocchi Ascii doc
 
-I blocchi vengono delimitati da due segni meno --
+I blocchi vengono delimitati da due segni meno --, altrimenti si possono usare quattro segni che identificano direttamente il blocco (es .... per il literal, ++++ per il pass ... ) 
 
 Nel'html generato 'verse' e 'literal' sono diversi: 'literal ha lo sfondo
 
@@ -41,6 +41,15 @@ Fusce fringilla mauris ut erat hendrerit pellentesque a a diam. Sed faucibus eui
 Quote::
 
 [quote]
+--
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac hendrerit elit. Proin purus nisi, tincidunt ut vestibulum vel, varius ac ligula. 
+
+Quisque vestibulum lobortis purus sit amet sagittis. Praesent vitae ante in risus pretium consequat. Duis vel lacus nec augue tristique feugiat. 
+
+Fusce fringilla mauris ut erat hendrerit pellentesque a a diam. Sed faucibus euismod tristique. Suspendisse lacinia sagittis fermentum. Praesent faucibus purus eu dolor finibus tristique. Nulla in blandit elit. Mauris tortor purus, mattis dignissim est eget, varius suscipit nulla. Curabitur ac cursus mauris, accumsan aliquam arcu.
+--
+
+[sidebar]
 --
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac hendrerit elit. Proin purus nisi, tincidunt ut vestibulum vel, varius ac ligula. 
 
