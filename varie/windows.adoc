@@ -63,3 +63,20 @@ REM %RUN% xhost +
 
 in autorun eseguire mettere un link a:
 C:\\cygwin\\bin\\run.exe /usr/bin/startmyx.bat
+
+
+=== XTERM configuration
+
+creare un file ~/.Xresources 
+
+```
+XTerm*reverseVideo: on
+
+xterm*faceName: DejaVu Sans Mono:style=Book:antialias=false
+xterm*faceNameDoublesize: WenQuanYi Bitmap Song
+xterm*faceSize: 10 
+```
+
+e ricaricarlo con il comando :
+
+  xrdb ~/.Xresources
