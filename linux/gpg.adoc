@@ -36,10 +36,11 @@ per esportare la chiave pubblica
 per esportare la chiave privata
 
     gpg --export-secret-key -a "User Name" > sec.key
+	 -a --export esporta la chiave pubblica in ascii
+
+per editare le chiavi
+	
+    gpg --edit-key nomechiave
    
 le chiavi sono in $HOME/.gpg/pubring.gpg e secring.gpg
 
-         --clearsign nomefilefirma in ascii
-	 --verify nomefileverifica un file
-	 --edit-key nomechiavecambia la password
-	 -a --export esporta la chiave pubblica in ascii
