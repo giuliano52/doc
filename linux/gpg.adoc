@@ -2,8 +2,17 @@
 
 == Encrypt e decrypt
 
-   gpg --encrypt -o secret.tar.gpg secret.tar
-   gpg --decrypt secret.tar.gpg
+crittografare
+
+   gpg -e secret.tar
+
+decifrare
+
+   gpg  secret.tar.gpg
+   
+firmare
+
+   gpg -s nomefile
 
 
 == Generare le chiavi
@@ -30,9 +39,6 @@ per esportare la chiave privata
    
 le chiavi di pgp sono compatibili (usare -import)
 
-    gpg -e nomefile per crittografare (usare come ID Nome Cognome)
-		-s nomefileper firmare
-    gpg nomefile per de-crittografare 
          --import --allow-secret-keys-import per importare le chiavi private
 		 --list-keyper vedere le chiavi pubbliche
 		 --list-secret-keysper vedere le chiavi private
