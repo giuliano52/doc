@@ -2,13 +2,13 @@
 
 == Encrypt e decrypt
 
-crittografare
+crittografare (verà chiesto l'id della chiave o il nome e cognome)
 
-   gpg -e secret.tar
+   gpg -e nomefile.tar
 
 decifrare
 
-   gpg  secret.tar.gpg
+   gpg  nomefile.tar.gpg
    
 firmare
 
@@ -37,17 +37,9 @@ per esportare la chiave privata
 
     gpg --export-secret-key -a "User Name" > sec.key
    
-le chiavi di pgp sono compatibili (usare -import)
-
-         --import --allow-secret-keys-import per importare le chiavi private
-		 --list-keyper vedere le chiavi pubbliche
-		 --list-secret-keysper vedere le chiavi private
-		 --gen-keygenera le chiavi
-		 --import nomefileimporta chiavi di altri
-
 le chiavi sono in $HOME/.gpg/pubring.gpg e secring.gpg
 
          --clearsign nomefilefirma in ascii
-		 --verify nomefileverifica un file
-		 --edit-key nomechiavecambia la password
-		 -a --export esporta la chiave pubblica in ascii
+	 --verify nomefileverifica un file
+	 --edit-key nomechiavecambia la password
+	 -a --export esporta la chiave pubblica in ascii
