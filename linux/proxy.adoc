@@ -1,0 +1,27 @@
+= PROXY
+GD 2015-03-15
+
+== Tinyproxy
+
+	pacman -S tinyproxy
+	
+modificato /etc/tinyproxy/tinyproxy.conf modificando 
+
+	Port 8080
+	
+	#Listen 127.0.0.1
+
+	Allow 127.0.0.1
+	Allow 192.168.1.0/24
+	
+== Squid
+
+* configurare le ACL
+
+#acl localnet src 10.0.0.0/8  # RFC1918 possible internal network
+#acl localnet src 172.16.0.0/12       # RFC1918 possible internal network
+#acl localnet src fc00::/7       # RFC 4193 local private network range
+#acl localnet src fe80::/10      # RFC 4291 link-local (directly plugged) machines
+
+* porta 
+http_port 8080
