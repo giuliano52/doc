@@ -1,0 +1,8 @@
+= Programmi 
+
+== PDF
+
+per estrarre tutte le immagini da un file pdf
+
+  pacman -S poppler poppler-data
+  pdfimages -j file.pdf out_dir/
