@@ -28,7 +28,11 @@ Aggiungere questa riga in /etc/httpd/conf/mime.types:
 
 	application/x-httpd-php		php
 
+Se si desidera visualizzare gli errori di debug del codice php, modificare questa riga in /etc/php/php.ini:
 
+	display_errors=Off
+
+Far partire il servizio
 	
 	systemctl start httpd
 
