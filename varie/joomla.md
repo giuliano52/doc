@@ -150,7 +150,7 @@ echo $this->loadTemplate("question");
 per passare le informazioni si può usare anche (da capire)
 
 ```
-$this->items     = $this->get('Items')
+$this->items    = $this->get('Items', 'choose_quiz');
 $this->data     = $this->get('Data'); 
 $this->form     = $this->get('Form');
 $this->state    = $this->get('State');
