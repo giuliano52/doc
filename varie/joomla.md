@@ -147,5 +147,13 @@ si usa
 echo $this->loadTemplate("question");
 ```
 
+per passare le informazioni si può usare anche (da capire)
 
+```
+$this->items     = $this->get('Items')
+$this->data     = $this->get('Data'); 
+$this->form     = $this->get('Form');
+$this->state    = $this->get('State');
+$this->params   = $this->state->get('params');
+```
 
