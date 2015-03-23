@@ -2,6 +2,35 @@
 
 == Apache su Arch
 
+=== Installazione
+
+	yaourt -S apache php-apache
+
+modificare /etc/httpd/conf/httpd.conf la linea 
+
+	LoadModule mpm_event_module modules/mod_mpm_event.so
+
+con
+
+	LoadModule mpm_prefork_module modules/mod_mpm_prefork.so
+	
+Place this in the LoadModule list anywhere after LoadModule dir_module modules/mod_dir.so:
+
+	LoadModule php5_module modules/libphp5.so
+
+Place this at the end of the Include list:
+
+	Include conf/extra/php5_module.conf
+
+	
+	systemctl start httpd
+
+test: 	
+
+	echo "<?php phpinfo(); ?>" > p105.php
+
+=== user-dir
+	
 per le user-dir i permessi della home e della public_html devono essere:
 
     chmod o+x ~
