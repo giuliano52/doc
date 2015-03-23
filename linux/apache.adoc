@@ -4,6 +4,8 @@
 
 === Installazione
 
+Vedi comunque: https://wiki.archlinux.org/index.php/LAMP_%28Italiano%29
+
 	yaourt -S apache php-apache
 
 modificare /etc/httpd/conf/httpd.conf la linea 
@@ -21,6 +23,11 @@ Place this in the LoadModule list anywhere after LoadModule dir_module modules/m
 Place this at the end of the Include list:
 
 	Include conf/extra/php5_module.conf
+	
+Aggiungere questa riga in /etc/httpd/conf/mime.types:
+
+	application/x-httpd-php		php
+
 
 	
 	systemctl start httpd
