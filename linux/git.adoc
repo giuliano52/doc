@@ -1,10 +1,9 @@
----
-title: GIT
-author: Giuliano Dedda 
-date: 17/07/2014
----
+= GIT
+:author: Giuliano Dedda 
+:date: 26/3/2015
 
-#GIT
+
+== Repository
 
 inizializzare un repository
 
@@ -24,8 +23,14 @@ commit:
     git push https://github.com/giuliano52/pyhub.git
 
 al posto di git add e git commit si puà usare git commit -a -m "commento"
+
+=== Autenticazione
+
+per abilitare l'autenticazione si può creare un file +.netrc+ con la seguente sitassi : 
+
+	machine server.git.com login user_name password user_password
     
-##Remove history from github
+== Remove history from github
 Step 1: remove all history
 
     rm -rf .git
